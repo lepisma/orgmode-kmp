@@ -14,4 +14,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "orgmode-kmp"
-include(":library")
+include(":orgmode")
