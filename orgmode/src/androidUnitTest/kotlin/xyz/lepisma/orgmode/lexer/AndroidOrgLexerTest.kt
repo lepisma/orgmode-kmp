@@ -1,6 +1,6 @@
-package xyz.lepisma.orgmode
+package xyz.lepisma.orgmode.lexer
 
-import org.junit.Assert.assertEquals
+import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
@@ -318,7 +318,7 @@ class OrgLexerTest {
         val lexer = OrgLexer(orgTestText)
         val tokens = lexer.tokenize()
 
-        assertEquals(inverseLex(tokens), orgTestText)
+        Assert.assertEquals(inverseLex(tokens), orgTestText)
     }
 
     @Test
@@ -441,6 +441,6 @@ class OrgDTParserTest(
     @Test
     fun testParseDatetimeStamp() {
         val actualToken = parser.parse(inputString, 0)
-        assertEquals(stamp, actualToken)
+        Assert.assertEquals(stamp, actualToken)
     }
 }
