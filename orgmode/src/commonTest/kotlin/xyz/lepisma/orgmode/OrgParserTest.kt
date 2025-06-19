@@ -328,4 +328,15 @@ class OrgParserTest : StringSpec ({
 
         reconstructedText shouldBe orgParserTestText
     }
+
+    "testSection_Nesting should nest sections correctly" {
+        val document = parse(tokens)
+
+        document!!.content.size shouldBe 5
+        document.content[0].body.filter { it is OrgSection }.size shouldBe 1
+        document.content[1].body.filter { it is OrgSection }.size shouldBe 0
+        document.content[2].body.filter { it is OrgSection }.size shouldBe 1
+        document.content[3].body.filter { it is OrgSection }.size shouldBe 4
+        document.content[4].body.filter { it is OrgSection }.size shouldBe 0
+    }
 })
