@@ -1,7 +1,7 @@
 package xyz.lepisma.orgmode.lexer
 
-import java.time.LocalDate
-import java.time.LocalTime
+import kotlinx.datetime.LocalTime
+import kotlinx.datetime.LocalDate
 import kotlin.math.max
 
 sealed class Token {

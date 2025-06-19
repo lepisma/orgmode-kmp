@@ -1,32 +1,24 @@
 package xyz.lepisma.orgmode.lexer
 
-import android.annotation.TargetApi
-import android.os.Build
-import java.time.LocalDate
-import java.time.LocalTime
-import java.time.format.DateTimeFormatter
-import java.time.format.DateTimeParseException
-import java.time.format.TextStyle
-import java.util.Locale
+import kotlinx.datetime.LocalDate
+import kotlinx.datetime.LocalTime
+import kotlinx.datetime.format.*
 
-@TargetApi(Build.VERSION_CODES.O)
+
+/**
+ * Parse and return a DatetimeStamp Token.
+ *
+ * While this is designed to be used in the lexer, if needed, you can also use it in the parser.
+ */
 class OrgDTParser {
-    private val DATE_FORMATTER_ORG = DateTimeFormatter.ofPattern("yyyy-MM-dd")
-    private val TIME_FORMATTER_ORG = DateTimeFormatter.ofPattern("HH:mm")
+    private val DATE_FORMATTER_ORG = LocalDate.Format { year(); char('-'); monthNumber(); char('-'); dayOfMonth() }
+    private val TIME_FORMATTER_ORG = LocalTime.Format { hour(); char(':'); minute() }
 
     private val REPEATER_PATTERN = """([.+]?\d+[hdwmy])""".toRegex() // e.g., +1d, .5m, ++1w
-
-    private val SINGLE_TIMESTAMP_CONTENT_REGEX = """
-    (\d{4}-\d{2}-\d{2})         # Group 1: YYYY-MM-DD
-    (?:\s([A-Za-z]{3}))?        # Group 2: Optional Day (e.g., Mon, Tue)
-    (?:\s(\d{2}:\d{2}))?        # Group 3: Optional Start Time HH:MM
-    (?:-(\d{2}:\d{2}))?         # Group 4: Optional End Time HH:MM (if time range)
-    (?:\s(${REPEATER_PATTERN.pattern}))?
-    """.trimIndent().toRegex(RegexOption.COMMENTS)
-
+    private val SINGLE_TIMESTAMP_CONTENT_REGEX = """(\d{4}-\d{2}-\d{2})(?:\s([A-Za-z]{3}))?(?:\s(\d{2}:\d{2}))?(?:-(\d{2}:\d{2}))?(?:\s(${REPEATER_PATTERN.pattern}))?""".toRegex()
     // These are exposed for lookahead
-    val ACTIVE_TIMESTAMP_REGEX = """<($SINGLE_TIMESTAMP_CONTENT_REGEX)>""".toRegex(RegexOption.COMMENTS)
-    val INACTIVE_TIMESTAMP_REGEX = """\[($SINGLE_TIMESTAMP_CONTENT_REGEX)\]""".toRegex(RegexOption.COMMENTS)
+    val ACTIVE_TIMESTAMP_REGEX = """<($SINGLE_TIMESTAMP_CONTENT_REGEX)>""".toRegex()
+    val INACTIVE_TIMESTAMP_REGEX = """\[($SINGLE_TIMESTAMP_CONTENT_REGEX)\]""".toRegex()
 
     fun parse(text: String, index: Int): Token.DatetimeStamp? {
         val isActive: Boolean
@@ -54,19 +46,39 @@ class OrgDTParser {
                     val timeEndStr = cm.groupValues[4].takeIf { it.isNotEmpty() }
                     val repeaterStr = cm.groupValues[5].takeIf { it.isNotEmpty() }
 
-                    val date = LocalDate.parse(dateStr, DATE_FORMATTER_ORG)
+                    val date = try {
+                        DATE_FORMATTER_ORG.parse(dateStr)
+                    } catch (e: IllegalArgumentException) {
+                        println("Error parsing date '$dateStr': ${e.message}")
+                        return null
+                    }
 
                     val showWeekDay = weekdayStr != null
                     if (showWeekDay) {
-                        val expectedWeekday = date.dayOfWeek.getDisplayName(TextStyle.SHORT, Locale.ENGLISH)
-                        if (!expectedWeekday.startsWith(weekdayStr!!, ignoreCase = true)) {
+                        val expectedWeekday = date.dayOfWeek.name.take(3)
+                        if (!expectedWeekday.equals(weekdayStr, ignoreCase = true)) {
                             println("Warning: Weekday mismatch for '$dateStr'. Expected $expectedWeekday, got $weekdayStr")
                         }
                     }
 
                     val timePair: Pair<LocalTime, LocalTime?>? = if (timeStartStr != null) {
-                        val startTime = LocalTime.parse(timeStartStr, TIME_FORMATTER_ORG)
-                        val endTime = if (timeEndStr != null) LocalTime.parse(timeEndStr, TIME_FORMATTER_ORG) else null
+                        val startTime = try {
+                            TIME_FORMATTER_ORG.parse(timeStartStr)
+                        } catch (e: IllegalArgumentException) {
+                            println("Error parsing start time '$timeStartStr': ${e.message}")
+                            return null
+                        }
+
+                        val endTime = if (timeEndStr != null) {
+                            try {
+                                TIME_FORMATTER_ORG.parse(timeEndStr)
+                            } catch (e: IllegalArgumentException) {
+                                println("Error parsing end time '$timeEndStr': ${e.message}")
+                                return null
+                            }
+                        } else {
+                            null
+                        }
                         startTime to endTime
                     } else {
                         null
@@ -83,7 +95,7 @@ class OrgDTParser {
                         repeater = repeater
                     )
 
-                } catch (e: DateTimeParseException) {
+                } catch (e: IllegalArgumentException) {
                     println("Error parsing date/time for '${m.value}': ${e.message}")
                     return null
                 } catch (e: Exception) {

@@ -28,12 +28,17 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                //put your multiplatform dependencies here
+                implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.6.2")
             }
         }
         val commonTest by getting {
             dependencies {
-                implementation(libs.kotlin.test)
+                implementation("io.kotest:kotest-runner-junit5:5.8.0")
+                implementation("io.kotest:kotest-framework-engine:5.8.0")
+                implementation("io.kotest:kotest-framework-api:5.8.0")
+                implementation("io.kotest:kotest-assertions-core:5.8.0")
+                implementation("io.kotest:kotest-framework-datatest:5.8.0")
+                implementation("io.kotest:kotest-property:5.8.0")
             }
         }
     }
@@ -49,6 +54,10 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+}
+
+tasks.withType<Test>().configureEach {
+    useJUnitPlatform()
 }
 
 mavenPublishing {
