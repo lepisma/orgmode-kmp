@@ -4,7 +4,6 @@ import java.time.LocalDate
 import java.time.LocalTime
 import kotlin.math.max
 
-// TODO: Should probably use IntRange for range
 sealed class Token {
     abstract val text: String
     abstract val range: Pair<Int, Int>
