@@ -4,6 +4,7 @@ import xyz.lepisma.orgmode.OrgElem
 import xyz.lepisma.orgmode.OrgParsingError
 import xyz.lepisma.orgmode.OrgToken
 import xyz.lepisma.orgmode.lexer.Token
+import kotlin.concurrent.Volatile
 
 /**
  * Output from a parser
@@ -56,26 +57,15 @@ fun <T, R> ParsingResult<T>.map(transform: (T) -> R): ParsingResult<R> {
     }
 }
 
+fun <T> lazy(parserProvider: () -> Parser<T>): Parser<T> {
+    val actualParserDelegate: Lazy<Parser<T>> = kotlin.lazy(LazyThreadSafetyMode.SYNCHRONIZED) {
+        parserProvider()
+    }
 
-fun <T> lazy(parserProvider: () -> Parser<T>): Parser<T> = object : Parser<T> {
-    @Volatile
-    private var _actualParser: Parser<T>? = null
-
-    private val actualParser: Parser<T>
-        get() {
-            if (_actualParser == null) {
-                synchronized(this) {
-                    if (_actualParser == null) {
-                        _actualParser = parserProvider()
-                    }
-                }
-            }
-            return _actualParser!!
+    return object : Parser<T> {
+        override fun invoke(tokens: List<Token>, pos: Int): ParsingResult<T> {
+            return actualParserDelegate.value.invoke(tokens, pos)
         }
-
-
-    override fun invoke(tokens: List<Token>, pos: Int): ParsingResult<T> {
-        return actualParser.invoke(tokens, pos)
     }
 }
 

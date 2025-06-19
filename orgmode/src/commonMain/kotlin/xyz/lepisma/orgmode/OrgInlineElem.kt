@@ -1,8 +1,8 @@
 package xyz.lepisma.orgmode
 
 import xyz.lepisma.orgmode.lexer.Token
-import java.time.LocalDate
-import java.time.LocalTime
+import kotlinx.datetime.LocalDate
+import kotlinx.datetime.LocalTime
 
 /**
  * A piece of text in org mode with consistent styling and interpretation

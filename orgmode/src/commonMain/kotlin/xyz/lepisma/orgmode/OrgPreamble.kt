@@ -1,7 +1,7 @@
 package xyz.lepisma.orgmode
 
 import xyz.lepisma.orgmode.lexer.Token
-import java.time.LocalDate
+import kotlinx.datetime.LocalDate
 
 /**
  * Preamble is everything that comes in the start before the actual content starts

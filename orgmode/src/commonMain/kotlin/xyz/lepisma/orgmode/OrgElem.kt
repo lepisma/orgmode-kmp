@@ -61,4 +61,3 @@ data class OrgParsingError(
 data class OrgToken(
     override var tokens: List<Token>
 ) : OrgElem
-
