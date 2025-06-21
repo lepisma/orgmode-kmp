@@ -46,11 +46,10 @@ val parseFileKeyword: Parser<Pair<OrgToken, OrgLine>> = seq(
  * We don't allow empty lines here
  */
 val parsePreamble: Parser<OrgPreamble> = seq(
-    maybe(parseProperties),
-    oneOrMore(matchLineBreak),
+    maybe(seq(parseProperties, oneOrMore(matchLineBreak))),
     oneOrMore(seq(parseFileKeyword, matchLineBreak)),
     zeroOrMore(matchLineBreak)
-).map { (props, lbs, keywordLines, lbsEnd) ->
+).map { (propBlock, keywordLines, lbsEnd) ->
     // We need to interpret all the file keywords
     var title: OrgLine? = null
     var tags: OrgTags? = null
@@ -73,8 +72,8 @@ val parsePreamble: Parser<OrgPreamble> = seq(
     OrgPreamble(
         title = title ?: OrgLine(emptyList(), tokens = emptyList()),
         tags = tags,
-        tokens = collectTokens(props, lbs, keywordLines, lbsEnd),
-        properties = props
+        tokens = collectTokens(propBlock, keywordLines, lbsEnd),
+        properties = propBlock?.first
     )
 }
 

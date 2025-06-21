@@ -6,7 +6,7 @@ import io.kotest.matchers.shouldNotBe
 import xyz.lepisma.orgmode.lexer.OrgLexer
 import xyz.lepisma.orgmode.lexer.inverseLex
 
-val orgParserTestText = """:PROPERTIES:
+const val orgParserTestText = """:PROPERTIES:
 :ID:      21e2c8f6-8dbb-4002-bcf5-a15203516114
 :END:
 #+TITLE: Org Test
@@ -314,6 +314,15 @@ class OrgParserTest : StringSpec ({
 
     "testParse_Success check for no parsing errors" {
         val document = parse(tokens)
+        document shouldNotBe null
+    }
+
+    "testParse_Paragraph check for no parsing errors in plain paragraphs" {
+        val tokens = OrgLexer("""#+TITLE: Testing my name
+            |hello world again""".trimMargin()).tokenize()
+
+        val document = parse(tokens)
+
         document shouldNotBe null
     }
 

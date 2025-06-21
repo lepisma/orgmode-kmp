@@ -3,7 +3,7 @@ package xyz.lepisma.orgmode
 import io.kotest.core.spec.style.StringSpec
 import xyz.lepisma.orgmode.lexer.OrgLexer
 
-val orgTreeManipulationTestText = """:PROPERTIES:
+const val orgTreeManipulationTestText = """:PROPERTIES:
 :ID:      21e2c8f6-8dbb-4002-bcf5-a15203516114
 :END:
 #+TITLE: Org Test
