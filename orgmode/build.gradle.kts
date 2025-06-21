@@ -74,22 +74,17 @@ mavenPublishing {
         url = "https://github.com/lepisma/orgmode-kmp/"
         licenses {
             license {
-                name = "XXX"
-                url = "YYY"
-                distribution = "ZZZ"
+                name = "Apache License, Version 2.0"
+                url = "https://www.apache.org/licenses/LICENSE-2.0.txt"
+                distribution = "repo"
             }
         }
         developers {
             developer {
-                id = "XXX"
-                name = "YYY"
-                url = "ZZZ"
+                id = "lepisma"
+                name = "Abhinav Tushar"
+                url = "https://lepisma.xyz"
             }
-        }
-        scm {
-            url = "XXX"
-            connection = "YYY"
-            developerConnection = "ZZZ"
         }
     }
 }
