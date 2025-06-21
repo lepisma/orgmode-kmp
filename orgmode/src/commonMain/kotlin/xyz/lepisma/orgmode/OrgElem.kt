@@ -19,14 +19,6 @@ data class OrgOptions(
 ) : OrgElem
 
 /**
- * Unlike simple options, org properties could have full fledged org-mode text
- */
-data class OrgProperties(
-    val map: Map<String, OrgLine>,
-    override var tokens: List<Token>
-) : OrgElem
-
-/**
  * Tags for files or headings or anywhere else
  */
 data class OrgTags(
@@ -36,14 +28,6 @@ data class OrgTags(
 
 data class OrgTableRow(
     val cells: List<OrgLine>,
-    override var tokens: List<Token>
-) : OrgElem
-
-/**
- * A single line string with Org Mode formatting enabled
- */
-data class OrgLine(
-    val items: List<OrgInlineElem>,
     override var tokens: List<Token>
 ) : OrgElem
 

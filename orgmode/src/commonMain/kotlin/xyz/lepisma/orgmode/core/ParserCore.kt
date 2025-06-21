@@ -4,7 +4,6 @@ import xyz.lepisma.orgmode.OrgElem
 import xyz.lepisma.orgmode.OrgParsingError
 import xyz.lepisma.orgmode.OrgToken
 import xyz.lepisma.orgmode.lexer.Token
-import kotlin.concurrent.Volatile
 
 /**
  * Output from a parser
