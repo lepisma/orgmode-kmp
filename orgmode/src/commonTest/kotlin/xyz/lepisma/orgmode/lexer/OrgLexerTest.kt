@@ -4,7 +4,7 @@ import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.collections.shouldBeEmpty
 import io.kotest.matchers.shouldBe
 
-val orgTestText = """:PROPERTIES:
+const val orgTestText = """:PROPERTIES:
 :ID:      21e2c8f6-8dbb-4002-bcf5-a15203516114
 :END:
 #+TITLE: Org Test
@@ -319,6 +319,15 @@ class OrgLexerTest : StringSpec({
     "testTokenize_Errors should find no errors" {
         val lexer = OrgLexer(orgTestText)
         val tokens = lexer.tokenize()
+
+        tokens.filterIsInstance<Token.Error>().shouldBeEmpty()
+    }
+
+    "testTokenize_ParagraphErrors check for no lexing errors in plain paragraphs" {
+        val tokens = OrgLexer("""#+TITLE: Testing my name
+            |hello world
+            |
+            |hello world again""".trimMargin()).tokenize()
 
         tokens.filterIsInstance<Token.Error>().shouldBeEmpty()
     }

@@ -1577,13 +1577,23 @@ class OrgLexer(private val input: String) {
                 else -> {
                     val match = lookaheadTill(Regex("\\s"))
                     if (match == null) {
-                        consumeError("Text", skip = 1)
+                        if (currentPos < input.length) {
+                            scannedPos = input.length
+                            tokens.add(
+                                Token.Text(
+                                    input.substring(currentPos, scannedPos),
+                                    range = currentPos to scannedPos
+                                )
+                            )
+                        } else {
+                            consumeError("End of Text", skip = 1)
+                        }
                     } else {
                         scannedPos = match.range.first
                         tokens.add(
                             Token.Text(
                                 input.substring(currentPos, scannedPos),
-                                range = Pair(currentPos, scannedPos)
+                                range = currentPos to scannedPos
                             )
                         )
                     }
