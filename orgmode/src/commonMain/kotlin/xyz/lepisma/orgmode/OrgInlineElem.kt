@@ -37,6 +37,19 @@ sealed class OrgInlineElem {
         }
     }
 
+    // Items like #hash-tag. Not part of org-mode spec.
+    data class HashTag(
+        val text: String,  // Text without '#'
+        override var tokens: List<Token>
+    ) : OrgInlineElem(), OrgElem
+
+    // Items like #metric(value). These are not part of org-mode spec.
+    data class HashMetric(
+        val metric: String,  // Metric name without '#'
+        val value: String,   // Value inside parentheses
+        override var tokens: List<Token>
+    ) : OrgInlineElem(), OrgElem
+
     data class DTRange(
         val start: DTStamp,
         val end: DTStamp,
