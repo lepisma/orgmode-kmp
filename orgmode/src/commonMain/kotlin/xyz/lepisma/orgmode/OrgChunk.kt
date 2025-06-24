@@ -117,12 +117,7 @@ val parseParagraph: Parser<OrgChunk.OrgParagraph> = Parser { tokens, pos ->
         // Currently taking all raw texts from tokens and throwing them as a single text
         ParsingResult.Success(
             output = OrgChunk.OrgParagraph(
-                items = accumulator.map { tok ->
-                    OrgInlineElem.Text(
-                        tok.text,
-                        tokens = listOf(tok)
-                    )
-                },
+                items = buildInlineElems(accumulator),
                 tokens = accumulator
             ),
             nextPos = currentPos

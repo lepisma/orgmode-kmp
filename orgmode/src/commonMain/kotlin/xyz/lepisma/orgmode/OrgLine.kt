@@ -15,11 +15,7 @@ data class OrgLine(
 val parseOrgLine = collectUntil { it is Token.LineBreak || it is Token.EOF }
     .map { tokens ->
         OrgLine(
-            items = listOf(
-                OrgInlineElem.Text(
-                    tokens.joinToString("") { it.text },
-                    tokens = tokens
-                )),
+            items = buildInlineElems(tokens),
             tokens = tokens
         )
     }

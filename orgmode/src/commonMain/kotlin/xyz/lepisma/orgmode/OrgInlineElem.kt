@@ -3,6 +3,7 @@ package xyz.lepisma.orgmode
 import xyz.lepisma.orgmode.lexer.Token
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.LocalTime
+import xyz.lepisma.orgmode.core.Parser
 
 /**
  * A piece of text in org mode with consistent styling and interpretation
@@ -102,4 +103,11 @@ sealed class OrgInlineElem {
         val content: List<OrgInlineElem>,
         override var tokens: List<Token>
     ) : OrgInlineElem(), OrgElem
+}
+
+/**
+ * Take given tokens and parse as well formatted org inline elements
+ */
+fun buildInlineElems(tokens: List<Token>): List<OrgInlineElem> {
+    return tokens.map { tok -> OrgInlineElem.Text(tok.text, tokens=listOf(tok)) }
 }
