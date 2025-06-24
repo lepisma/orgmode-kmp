@@ -200,6 +200,8 @@ fun buildInlineElems(tokens: List<Token>): List<OrgInlineElem> {
                     type = type,
                     tokens = linkTokens
                 ))
+
+                linkTokens = mutableListOf()
             }
             is Token.LinkTitleSep -> {
                 linkTokens.add(token)
