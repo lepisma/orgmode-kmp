@@ -373,4 +373,16 @@ class OrgParserTest : StringSpec ({
             section.heading.tags?.tags shouldBe listOf("tags", "are", "here")
         }
     }
+
+    "testInlineParsing_LinkParsing without title should work correctly" {
+        val text = "this is [[attachment:hello world.pdf]]"
+        val tokens = OrgLexer(text).tokenize()
+        seq(matchSOF, parseOrgLine, matchEOF).invoke(tokens, 0).map { (_, line, _) ->
+            line.items.size shouldBe 5
+            (line.items.last() is OrgInlineElem.Link) shouldBe true
+            (line.items.last() as OrgInlineElem.Link).title shouldBe null
+            (line.items.last() as OrgInlineElem.Link).target shouldBe "hello world.pdf"
+            (line.items.last() as OrgInlineElem.Link).type shouldBe "attachment"
+        }
+    }
 })

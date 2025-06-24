@@ -46,7 +46,7 @@ sealed class OrgInlineElem {
     data class Link(
         val type: String?,
         val target: String,
-        val title: OrgLine?,
+        val title: List<OrgInlineElem>?,
         override var tokens: List<Token>
     ) : OrgInlineElem(), OrgElem
 
@@ -113,11 +113,11 @@ sealed class OrgInlineElem {
  */
 fun buildInlineElems(tokens: List<Token>): List<OrgInlineElem> {
     // TODO for today, then release:
-    // links
     // #tag
     // #metricValue(<num>)
     var elems: MutableList<OrgInlineElem> = mutableListOf()
     var currentPos = 0
+    var linkTokens: MutableList<Token> = mutableListOf()
 
     while (currentPos < tokens.size) {
         val token = tokens[currentPos]
@@ -149,7 +149,55 @@ fun buildInlineElems(tokens: List<Token>): List<OrgInlineElem> {
                     elems.add(OrgInlineElem.Text(token.text, tokens=listOf(token)))
                 }
             }
-            else -> elems.add(OrgInlineElem.Text(token.text, tokens=listOf(token)))
+            is Token.LinkStart -> {
+                // We assume no link-nesting
+                linkTokens = mutableListOf(token)
+            }
+            is Token.LinkEnd -> {
+                linkTokens.add(token)
+                // Build the element now and append to list
+                val sepIndex = linkTokens.indexOfFirst { it is Token.LinkTitleSep }
+                var title: List<OrgInlineElem>? = null
+                var type: String? = null
+
+                val targetString = if (sepIndex == -1) {
+                    // Everything inside the bounds is target
+                    linkTokens.drop(1).dropLast(1).joinToString("") { it.text }
+                } else {
+                    // Everything till sep is target, rest is title
+                    val titleTokens = linkTokens.subList(sepIndex + 1, linkTokens.size)
+                    title = buildInlineElems(titleTokens)
+
+                    linkTokens.subList(1, sepIndex).joinToString("") { it.text }
+                }
+
+                val splits = targetString.split(":", limit = 2)
+                val target = when (splits.size) {
+                    1 -> targetString
+                    2 -> {
+                        type = splits[0]
+                        splits[1]
+                    }
+                    else -> "NO TARGET"
+                }
+
+                elems.add(OrgInlineElem.Link(
+                    title = title,
+                    target = target,
+                    type = type,
+                    tokens = linkTokens
+                ))
+            }
+            is Token.LinkTitleSep -> {
+                linkTokens.add(token)
+            }
+            else -> {
+                if (linkTokens.isNotEmpty()) {
+                    linkTokens.add(token)
+                } else {
+                    elems.add(OrgInlineElem.Text(token.text, tokens = listOf(token)))
+                }
+            }
         }
         currentPos++
     }

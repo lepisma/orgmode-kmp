@@ -1568,27 +1568,33 @@ class OrgLexer(private val input: String) {
                     consumeNCharsAsText(1)
                 }
                 else -> {
-                    val match = lookaheadTill(Regex("\\s"))
-                    if (match == null) {
-                        if (currentPos < input.length) {
-                            scannedPos = input.length
+                    // If we are at a special char, let's just consume it like before
+                    if (lookahead(Regex("[^a-zA-Z0-9'\\s-]")) != null) {
+                        consumeNCharsAsText(1)
+                    } else {
+                        // Else we collect chars till the special char or whitespace
+                        val match = lookaheadTill(Regex("[^a-zA-Z0-9'-]|\\s"))
+                        if (match == null) {
+                            if (currentPos < input.length) {
+                                scannedPos = input.length
+                                tokens.add(
+                                    Token.Text(
+                                        input.substring(currentPos, scannedPos),
+                                        range = currentPos to scannedPos
+                                    )
+                                )
+                            } else {
+                                consumeError("End of Text", skip = 1)
+                            }
+                        } else {
+                            scannedPos = match.range.first
                             tokens.add(
                                 Token.Text(
                                     input.substring(currentPos, scannedPos),
                                     range = currentPos to scannedPos
                                 )
                             )
-                        } else {
-                            consumeError("End of Text", skip = 1)
                         }
-                    } else {
-                        scannedPos = match.range.first
-                        tokens.add(
-                            Token.Text(
-                                input.substring(currentPos, scannedPos),
-                                range = currentPos to scannedPos
-                            )
-                        )
                     }
                 }
             }
