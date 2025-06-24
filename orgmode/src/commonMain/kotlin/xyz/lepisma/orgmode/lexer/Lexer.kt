@@ -1377,7 +1377,7 @@ class OrgLexer(private val input: String) {
                         }
                     } else {
                         // This is plain text
-                        // We don't support #tag
+                        // We don't support #tag at the lexing stage
                         scannedPos = currentPos + 1
                         tokens.add(Token.Text(
                             text = "#",

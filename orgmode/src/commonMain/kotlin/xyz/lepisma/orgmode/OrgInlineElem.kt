@@ -4,6 +4,7 @@ import xyz.lepisma.orgmode.lexer.Token
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.LocalTime
 import xyz.lepisma.orgmode.core.Parser
+import xyz.lepisma.orgmode.core.collectTokens
 
 /**
  * A piece of text in org mode with consistent styling and interpretation
@@ -107,7 +108,51 @@ sealed class OrgInlineElem {
 
 /**
  * Take given tokens and parse as well formatted org inline elements
+ *
+ * This will not be very robust to begin with but will work for most use cases.
  */
 fun buildInlineElems(tokens: List<Token>): List<OrgInlineElem> {
-    return tokens.map { tok -> OrgInlineElem.Text(tok.text, tokens=listOf(tok)) }
+    // TODO for today, then release:
+    // links
+    // #tag
+    // #metricValue(<num>)
+    var elems: MutableList<OrgInlineElem> = mutableListOf()
+    var currentPos = 0
+
+    while (currentPos < tokens.size) {
+        val token = tokens[currentPos]
+
+        when (token) {
+            is Token.DatetimeStamp -> {
+                elems.add(OrgInlineElem.DTStamp.fromDatetimeToken(token))
+            }
+            is Token.DatetimeDateRangeSep -> {
+                // First we check if the last was dt stamp and next was dt stamp, then we add the
+                // range. Otherwise we just add this as plain text elem.
+                if (elems.isNotEmpty() &&
+                    elems.last() is OrgInlineElem.DTStamp &&
+                    currentPos + 1 < tokens.size &&
+                    tokens[currentPos + 1] is Token.DatetimeStamp) {
+
+                    val startStamp = elems.removeAt(elems.lastIndex) as OrgInlineElem.DTStamp
+                    val endStamp = OrgInlineElem.DTStamp.fromDatetimeToken(tokens[currentPos + 1] as Token.DatetimeStamp)
+
+                    elems.add(OrgInlineElem.DTRange(
+                        start = startStamp,
+                        end = endStamp,
+                        tokens = startStamp.tokens + listOf(token) + endStamp.tokens
+                    ))
+
+                    // We also need to advance the position by one extra token
+                    currentPos++
+                } else {
+                    elems.add(OrgInlineElem.Text(token.text, tokens=listOf(token)))
+                }
+            }
+            else -> elems.add(OrgInlineElem.Text(token.text, tokens=listOf(token)))
+        }
+        currentPos++
+    }
+
+    return elems
 }
