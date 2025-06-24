@@ -3,7 +3,11 @@ package xyz.lepisma.orgmode
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
 import io.kotest.matchers.shouldNotBe
+import xyz.lepisma.orgmode.core.map
+import xyz.lepisma.orgmode.core.matchEOF
 import xyz.lepisma.orgmode.lexer.OrgLexer
+import xyz.lepisma.orgmode.core.matchSOF
+import xyz.lepisma.orgmode.core.seq
 import xyz.lepisma.orgmode.lexer.inverseLex
 
 const val orgParserTestText = """:PROPERTIES:
@@ -338,7 +342,7 @@ class OrgParserTest : StringSpec ({
         reconstructedText shouldBe orgParserTestText
     }
 
-    "testSection_Nesting should nest sections correctly" {
+    "testParse_SectionNesting should nest sections correctly" {
         val document = parse(tokens)
 
         document!!.content.size shouldBe 5
@@ -347,5 +351,26 @@ class OrgParserTest : StringSpec ({
         document.content[2].body.filter { it is OrgSection }.size shouldBe 1
         document.content[3].body.filter { it is OrgSection }.size shouldBe 4
         document.content[4].body.filter { it is OrgSection }.size shouldBe 0
+    }
+
+    "testParse_SectionHeading should parse all properties correctly" {
+        val text = """
+            * DONE [#A] Property test    :tags:are:here:
+            CLOSED: [2025-06-24 Tue 17:43] DEADLINE: <2025-06-25 Wed> SCHEDULED: <2025-06-22 Sun>
+            :PROPERTIES:
+            :ARCHIVE: value of archive
+            :END:
+            
+            hello world
+        """.trimIndent()
+
+        val tokens = OrgLexer(text).tokenize()
+        seq(matchSOF, parseSection, matchEOF).invoke(tokens, 0).map { (_, section, _) ->
+            section.heading.properties shouldNotBe null
+            section.heading.planningInfo?.scheduled shouldNotBe null
+            section.heading.planningInfo?.closed shouldNotBe null
+            section.heading.planningInfo?.deadline shouldNotBe null
+            section.heading.tags?.tags shouldBe listOf("tags", "are", "here")
+        }
     }
 })

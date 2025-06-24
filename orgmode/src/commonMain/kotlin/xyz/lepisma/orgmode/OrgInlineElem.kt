@@ -20,7 +20,20 @@ sealed class OrgInlineElem {
         val isActive: Boolean,
         val repeater: String?,
         override var tokens: List<Token>
-    ) : OrgInlineElem(), OrgElem
+    ) : OrgInlineElem(), OrgElem {
+        companion object {
+            fun fromDatetimeToken(stamp: Token.DatetimeStamp): DTStamp {
+                return DTStamp(
+                    date = stamp.date,
+                    showWeekDay = stamp.showWeekDay,
+                    time = stamp.time,
+                    isActive = stamp.isActive,
+                    repeater = stamp.repeater,
+                    tokens = listOf(stamp)
+                )
+            }
+        }
+    }
 
     data class DTRange(
         val start: DTStamp,
