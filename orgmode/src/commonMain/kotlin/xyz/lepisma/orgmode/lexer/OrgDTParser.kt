@@ -27,11 +27,11 @@ class OrgDTParser {
         when {
             ACTIVE_TIMESTAMP_REGEX.matchAt(text, index) != null -> {
                 isActive = true
-                matchResult = ACTIVE_TIMESTAMP_REGEX.find(text)
+                matchResult = ACTIVE_TIMESTAMP_REGEX.find(text, index)
             }
             INACTIVE_TIMESTAMP_REGEX.matchAt(text, index) != null -> {
                 isActive = false
-                matchResult = INACTIVE_TIMESTAMP_REGEX.find(text)
+                matchResult = INACTIVE_TIMESTAMP_REGEX.find(text, index)
             }
             else -> return null
         }
