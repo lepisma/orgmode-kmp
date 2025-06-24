@@ -1398,52 +1398,40 @@ class OrgLexer(private val input: String) {
                     ))
                 }
                 'S' -> {
-                    if (atLineStart) {
-                        val match = lookahead(Regex("SCHEDULED:"))
-                        if (match != null) {
-                            scannedPos = currentPos + match.value.length
-                            tokens.add(
-                                Token.Scheduled(
-                                    range = Pair(currentPos, scannedPos)
-                                )
+                    val match = lookahead(Regex("SCHEDULED:"))
+                    if (match != null) {
+                        scannedPos = currentPos + match.value.length
+                        tokens.add(
+                            Token.Scheduled(
+                                range = Pair(currentPos, scannedPos)
                             )
-                        } else {
-                            consumeNCharsAsText(1)
-                        }
+                        )
                     } else {
                         consumeNCharsAsText(1)
                     }
                 }
                 'D' -> {
-                    if (atLineStart) {
-                        val match = lookahead(Regex("DEADLINE:"))
-                        if (match != null) {
-                            scannedPos = currentPos + match.value.length
-                            tokens.add(
-                                Token.Deadline(
-                                    range = Pair(currentPos, scannedPos)
-                                )
+                    val match = lookahead(Regex("DEADLINE:"))
+                    if (match != null) {
+                        scannedPos = currentPos + match.value.length
+                        tokens.add(
+                            Token.Deadline(
+                                range = Pair(currentPos, scannedPos)
                             )
-                        } else {
-                            consumeNCharsAsText(1)
-                        }
+                        )
                     } else {
                         consumeNCharsAsText(1)
                     }
                 }
                 'C' -> {
-                    if (atLineStart) {
-                        val match = lookahead(Regex("CLOSED:"))
-                        if (match != null) {
-                            scannedPos = currentPos + match.value.length
-                            tokens.add(
-                                Token.Closed(
-                                    range = Pair(currentPos, scannedPos)
-                                )
+                    val match = lookahead(Regex("CLOSED:"))
+                    if (match != null) {
+                        scannedPos = currentPos + match.value.length
+                        tokens.add(
+                            Token.Closed(
+                                range = Pair(currentPos, scannedPos)
                             )
-                        } else {
-                            consumeNCharsAsText(1)
-                        }
+                        )
                     } else {
                         consumeNCharsAsText(1)
                     }
