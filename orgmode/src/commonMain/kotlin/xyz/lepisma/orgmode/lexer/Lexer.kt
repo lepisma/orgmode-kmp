@@ -557,7 +557,12 @@ class OrgLexer(private val input: String) {
                 '\t' -> consumeTab()
                 else -> break
             }
-            char = input[currentPos]
+            // This could be overflow, so we check appropriately
+            if (currentPos >= input.length) {
+                break
+            } else {
+                char = input[currentPos]
+            }
         }
     }
 
