@@ -890,6 +890,9 @@ fun <T> collectTokens(vararg results: T): List<Token> {
                     collectTokens(result.tenth)
 
             is OrgElem -> result.tokens
+
+            is Token -> listOf(result)
+
             else -> {
                 throw Error("Unable to collect tokens from $result (type ${result::class.qualifiedName})")
             }
