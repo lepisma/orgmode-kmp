@@ -331,4 +331,11 @@ class OrgLexerTest : StringSpec({
 
         tokens.filterIsInstance<Token.Error>().shouldBeEmpty()
     }
+
+    "testTokenize_Spaces check for no lexing errors in text ending with space" {
+        val text = "this is [[some:link][desc]] "
+        val tokens = OrgLexer(text).tokenize()
+
+        tokens.filterIsInstance<Token.Error>().shouldBeEmpty()
+    }
 })

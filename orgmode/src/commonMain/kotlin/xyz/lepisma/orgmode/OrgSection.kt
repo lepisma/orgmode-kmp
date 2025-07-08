@@ -128,7 +128,7 @@ val parsePlanningInfo: Parser<OrgPlanningInfo> = oneOrMore(seq(
         parsePartialPlanningInfo { it is Token.Scheduled },
         parsePartialPlanningInfo { it is Token.Closed },
         parsePartialPlanningInfo { it is Token.Deadline }
-    ).map { it -> it as OrgPlanningInfo },
+    ),
     maybe(matchSpace)
 )).map { partials ->
     val scheduled = partials.firstNotNullOfOrNull { it.first.scheduled }

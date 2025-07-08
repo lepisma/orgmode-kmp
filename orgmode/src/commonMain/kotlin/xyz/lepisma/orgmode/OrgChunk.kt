@@ -46,88 +46,51 @@ val parseHorizontalRule: Parser<OrgChunk.OrgHorizontalLine> = matchToken {
     OrgChunk.OrgHorizontalLine(tokens = output.tokens)
 }
 
-val parseParagraph: Parser<OrgChunk.OrgParagraph> = Parser { tokens, pos ->
-    if (pos >= tokens.size) {
-        return@Parser parsingError("Exhausted tokens while parsing paragraph")
-    }
+val parseParagraph: Parser<OrgChunk.OrgParagraph> = parseInlineElems { trail ->
+    val currentToken = trail.last()
+    val prevTokens = trail.dropLast(1)
 
-    // Stopping condition for paragraph parsing
-    fun shouldStop(position: Int): Boolean {
-        val token = tokens[position]
+    // Firstly, we check for last token
+    when (currentToken) {
+        is Token.EOF,
+        is Token.UnorderedListMarker,
+        is Token.OrderedListMarker,
+        is Token.HeadingStars -> return@parseInlineElems true
 
-        return when (token) {
-            is Token.EOF,
-            is Token.UnorderedListMarker,
-            is Token.OrderedListMarker,
-            is Token.HeadingStars -> true
+        is Token.BlockEnd -> when (currentToken.type) {
+            Token.BlockType.ASIDE,
+            Token.BlockType.SRC,
+            Token.BlockType.PAGE_INTRO,
+            Token.BlockType.EDITS,
+            Token.BlockType.QUOTE,
+            Token.BlockType.VERSE -> return@parseInlineElems true
 
-            is Token.BlockEnd -> when (token.type) {
-                Token.BlockType.ASIDE,
-                Token.BlockType.SRC,
-                Token.BlockType.PAGE_INTRO,
-                Token.BlockType.EDITS,
-                Token.BlockType.QUOTE,
-                Token.BlockType.VERSE -> true
-
-                else -> false
-            }
-
-            is Token.BlockStart -> when (token.type) {
-                Token.BlockType.ASIDE,
-                Token.BlockType.SRC,
-                Token.BlockType.PAGE_INTRO,
-                Token.BlockType.EDITS,
-                Token.BlockType.QUOTE,
-                Token.BlockType.VERSE -> true
-
-                else -> false
-            }
-
-            else -> false
-        }
-    }
-
-    var accumulator = mutableListOf<Token>()
-    var currentPos = pos
-    var lbCount = 0
-    var tok: Token
-
-    while (currentPos < tokens.size) {
-        tok = tokens[currentPos]
-
-        if (shouldStop(currentPos)) {
-            break
+            else -> { }
         }
 
-        lbCount = if (tok is Token.LineBreak) {
-            lbCount + 1
-        } else {
-            0
-        }
-        if (lbCount == 2) {
-            accumulator.dropLast(1)
-            break
+        is Token.BlockStart -> when (currentToken.type) {
+            Token.BlockType.ASIDE,
+            Token.BlockType.SRC,
+            Token.BlockType.PAGE_INTRO,
+            Token.BlockType.EDITS,
+            Token.BlockType.QUOTE,
+            Token.BlockType.VERSE -> return@parseInlineElems true
+
+            else -> { }
         }
 
-        accumulator.add(tokens[currentPos])
-        currentPos++
+        else -> { }
     }
 
-    if (accumulator.isNotEmpty()) {
-        // Currently taking all raw texts from tokens and throwing them as a single text
-        ParsingResult.Success(
-            output = OrgChunk.OrgParagraph(
-                items = buildInlineElems(accumulator),
-                tokens = accumulator
-            ),
-            nextPos = currentPos
-        )
-    } else {
-        parsingError(
-            "Unable to parse paragraph because of lack of tokens",
-            tokens = listOf(tokens[pos])
-        )
-    }
+    // If still not stopped, we check if we have hit 2 or more consecutive linebreaks
+    return@parseInlineElems (trail.size > 1 &&
+            currentToken is Token.LineBreak &&
+            prevTokens.last() is Token.LineBreak)
+}.map {
+    OrgChunk.OrgParagraph(
+        items = it,
+        tokens = collectTokens(it)
+    )
 }
 
 val parseChunk: Parser<OrgChunk> = seq(
@@ -154,5 +117,5 @@ val parseChunk: Parser<OrgChunk> = seq(
     zeroOrMore(matchLineBreak)
 ).map { (chunk, lbs) ->
     chunk.tokens = collectTokens(chunk, lbs)
-    chunk as OrgChunk
+    chunk
 }

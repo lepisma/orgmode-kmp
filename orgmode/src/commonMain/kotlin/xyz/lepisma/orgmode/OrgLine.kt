@@ -1,5 +1,6 @@
 package xyz.lepisma.orgmode
 
+import xyz.lepisma.orgmode.core.collectTokens
 import xyz.lepisma.orgmode.core.collectUntil
 import xyz.lepisma.orgmode.core.map
 import xyz.lepisma.orgmode.lexer.Token
@@ -12,10 +13,12 @@ data class OrgLine(
     override var tokens: List<Token>
 ) : OrgElem
 
-val parseOrgLine = collectUntil { it is Token.LineBreak || it is Token.EOF }
-    .map { tokens ->
-        OrgLine(
-            items = buildInlineElems(tokens),
-            tokens = tokens
-        )
-    }
+/**
+ * Parse a single line of org inline elements
+ */
+val parseOrgLine = parseInlineElems { trail ->
+    val currentTok = trail.last()
+    currentTok is Token.LineBreak || currentTok is Token.EOF
+}.map {
+    OrgLine(items = it, tokens = collectTokens(it))
+}

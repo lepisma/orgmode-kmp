@@ -726,8 +726,8 @@ fun <T> maybe(parser: Parser<T>): Parser<T?> {
 /**
  * Match one of the parsers and return the result. Order matters.
  */
-fun oneOf(vararg parsers: Parser<OrgElem>): Parser<OrgElem> {
-    return Parser<OrgElem> { tokens, pos ->
+fun <T> oneOf(vararg parsers: Parser<T>): Parser<T> {
+    return Parser<T> { tokens, pos ->
         for (parser in parsers) {
             val result = parser.invoke(tokens, pos)
             if (result is ParsingResult.Success) {
@@ -894,7 +894,7 @@ fun <T> collectTokens(vararg results: T): List<Token> {
             is Token -> listOf(result)
 
             else -> {
-                throw Error("Unable to collect tokens from $result (type ${result::class.qualifiedName})")
+                throw Error("Unable to collect tokens from $result (type ${result!!::class.qualifiedName})")
             }
         }
     }

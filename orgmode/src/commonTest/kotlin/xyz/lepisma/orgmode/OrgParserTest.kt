@@ -3,11 +3,13 @@ package xyz.lepisma.orgmode
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
 import io.kotest.matchers.shouldNotBe
+import xyz.lepisma.orgmode.core.ParsingResult
 import xyz.lepisma.orgmode.core.map
 import xyz.lepisma.orgmode.core.matchEOF
 import xyz.lepisma.orgmode.lexer.OrgLexer
 import xyz.lepisma.orgmode.core.matchSOF
 import xyz.lepisma.orgmode.core.seq
+import xyz.lepisma.orgmode.lexer.Token
 import xyz.lepisma.orgmode.lexer.inverseLex
 
 const val orgParserTestText = """:PROPERTIES:
@@ -365,38 +367,96 @@ class OrgParserTest : StringSpec ({
         """.trimIndent()
 
         val tokens = OrgLexer(text).tokenize()
-        seq(matchSOF, parseSection, matchEOF).invoke(tokens, 0).map { (_, section, _) ->
-            section.heading.properties shouldNotBe null
-            section.heading.planningInfo?.scheduled shouldNotBe null
-            section.heading.planningInfo?.closed shouldNotBe null
-            section.heading.planningInfo?.deadline shouldNotBe null
-            section.heading.tags?.tags shouldBe listOf("tags", "are", "here")
-        }
+        val parser = seq(matchSOF, parseSection, matchEOF)
+        val section = (parser.invoke(tokens, 0) as ParsingResult.Success).output.second
+
+        section.heading.properties shouldNotBe null
+        section.heading.planningInfo?.scheduled shouldNotBe null
+        section.heading.planningInfo?.closed shouldNotBe null
+        section.heading.planningInfo?.deadline shouldNotBe null
+        section.heading.tags?.tags shouldBe listOf("tags", "are", "here")
+    }
+
+    "testInlineParsing_ElementsParsing should work" {
+        val text = "this is [[some:link][desc]] and some other #things."
+        val tokens = OrgLexer(text).tokenize()
+        val parser = seq(matchSOF, parseInlineElems { trail -> trail.last() is Token.EOF }, matchEOF)
+        val elems = (parser.invoke(tokens, 0) as ParsingResult.Success).output.second
+        elems.size shouldBe 15
     }
 
     "testInlineParsing_LinkParsing without title should work correctly" {
         val text = "this is [[attachment:hello world.pdf]]"
         val tokens = OrgLexer(text).tokenize()
-        seq(matchSOF, parseOrgLine, matchEOF).invoke(tokens, 0).map { (_, line, _) ->
-            line.items.size shouldBe 5
-            (line.items.last() is OrgInlineElem.Link) shouldBe true
-            (line.items.last() as OrgInlineElem.Link).title shouldBe null
-            (line.items.last() as OrgInlineElem.Link).target shouldBe "hello world.pdf"
-            (line.items.last() as OrgInlineElem.Link).type shouldBe "attachment"
-        }
+        val parser = seq(matchSOF, parseOrgLine, matchEOF)
+        val line = (parser.invoke(tokens, 0) as ParsingResult.Success).output.second
+        line.items.size shouldBe 5
+        (line.items.last() is OrgInlineElem.Link) shouldBe true
+        (line.items.last() as OrgInlineElem.Link).title shouldBe null
+        (line.items.last() as OrgInlineElem.Link).target shouldBe "hello world.pdf"
+        (line.items.last() as OrgInlineElem.Link).type shouldBe "attachment"
     }
 
     "testInlineParsing_LinkParsing with title should work correctly" {
         val text = "this is [[attachment:hello world.pdf][this is title]]"
         val tokens = OrgLexer(text).tokenize()
-        seq(matchSOF, parseOrgLine, matchEOF).invoke(tokens, 0).map { (_, line, _) ->
-            line.items.size shouldBe 5
-            (line.items.last() is OrgInlineElem.Link) shouldBe true
-            (line.items.last() as OrgInlineElem.Link).title!!
-                .filter { it is OrgInlineElem.Text  }
-                .joinToString("") { (it as OrgInlineElem.Text).text } shouldBe "this is title"
-            (line.items.last() as OrgInlineElem.Link).target shouldBe "hello world.pdf"
-            (line.items.last() as OrgInlineElem.Link).type shouldBe "attachment"
-        }
+        val parser = seq(matchSOF, parseOrgLine, matchEOF)
+        val line = (parser.invoke(tokens, 0) as ParsingResult.Success).output.second
+        line.items.size shouldBe 5
+        (line.items.last() is OrgInlineElem.Link) shouldBe true
+        (line.items.last() as OrgInlineElem.Link).title!!
+            .filter { it is OrgInlineElem.Text  }
+            .joinToString("") { (it as OrgInlineElem.Text).text } shouldBe "this is title"
+        (line.items.last() as OrgInlineElem.Link).target shouldBe "hello world.pdf"
+        (line.items.last() as OrgInlineElem.Link).type shouldBe "attachment"
+    }
+
+    "testInlineParsing_LinkParsing with many links should work correctly" {
+        val text = "this is [[attachment:hello world.pdf][this is title]] and this [[hello][world]] should also be okay"
+        val tokens = OrgLexer(text).tokenize()
+        val parser = seq(matchSOF, parseOrgLine, matchEOF)
+        val line = (parser.invoke(tokens, 0) as ParsingResult.Success).output.second
+        line.items.size shouldBe 19
+
+        // First link
+        (line.items[4] is OrgInlineElem.Link) shouldBe true
+        (line.items[4] as OrgInlineElem.Link).title!!
+            .filter { it is OrgInlineElem.Text  }
+            .joinToString("") { (it as OrgInlineElem.Text).text } shouldBe "this is title"
+        (line.items[4] as OrgInlineElem.Link).target shouldBe "hello world.pdf"
+        (line.items[4] as OrgInlineElem.Link).type shouldBe "attachment"
+
+        // Second link
+        (line.items[10] is OrgInlineElem.Link) shouldBe true
+        (line.items[10] as OrgInlineElem.Link).title!!
+            .filter { it is OrgInlineElem.Text  }
+            .joinToString("") { (it as OrgInlineElem.Text).text } shouldBe "world"
+        (line.items[10] as OrgInlineElem.Link).target shouldBe "hello"
+        (line.items[10] as OrgInlineElem.Link).type shouldBe null
+    }
+
+    "testHashParsing_HashTagParsing should work correctly" {
+        val text = "this is a text with #hashtag and #that-too #s91"
+        val tokens = OrgLexer(text).tokenize()
+        val parser = seq(matchSOF, parseOrgLine, matchEOF)
+        val line = (parser.invoke(tokens, 0) as ParsingResult.Success).output.second
+        val hashTags = line.items
+            .filter { it is OrgInlineElem.HashTag }
+            .map { it as OrgInlineElem.HashTag }
+        hashTags.size shouldBe 3
+        hashTags.map { it.text } shouldBe listOf("hashtag", "that-too", "s91")
+    }
+
+    "testHashParsing_HashMetricParsing should work correctly" {
+        val text = "text with #metric(value) and #m-2(1.0)"
+        val tokens = OrgLexer(text).tokenize()
+        val parser = seq(matchSOF, parseOrgLine, matchEOF)
+        val line = (parser.invoke(tokens, 0) as ParsingResult.Success).output.second
+        val hashMetrics = line.items
+            .filter { it is OrgInlineElem.HashMetric }
+            .map { it as OrgInlineElem.HashMetric }
+        hashMetrics.size shouldBe 2
+        hashMetrics.map { it.metric } shouldBe listOf("metric", "m-2")
+        hashMetrics.map { it.value } shouldBe listOf("value", "1.0")
     }
 })
