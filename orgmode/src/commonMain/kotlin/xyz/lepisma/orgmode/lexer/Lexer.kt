@@ -549,6 +549,10 @@ class OrgLexer(private val input: String) {
      * Consume contiguous sequence of spaces and tabs
      */
     private fun consumeSpacesAndTabs() {
+        if (currentPos >= input.length) {
+            return
+        }
+
         var char = input[currentPos]
 
         while (true) {
