@@ -136,14 +136,31 @@ sealed class OrgInlineElem: OrgElem {
  */
 val parseHashTag: Parser<OrgInlineElem.HashTag> = seq(
     matchToken { it is Token.Text && it.text == "#" },
-    collectUntil { it !is Token.Text || Regex("[a-zA-Z0-9_-]+", option = RegexOption.IGNORE_CASE).matchEntire(it.text) == null }
+    collectUntil { it !is Token.Text || Regex("[a-zA-Z0-9_-]+").matchEntire(it.text) == null }
 ).map { (hashTok, tokens) ->
     OrgInlineElem.HashTag(
         text = tokens.joinToString("") { it.text },
         tokens = collectTokens(hashTok, tokens)
     )
 }
-// val parseHashMetric: Parser<OrgInlineElem.HashMetric>
+
+/**
+ * Parse tags with metrics like #hash-tag(value)
+ */
+val parseHashMetric: Parser<OrgInlineElem.HashMetric> = seq(
+    matchToken { it is Token.Text && it.text == "#" },
+    collectUntil { it !is Token.Text || Regex("[a-zA-Z0-9_-]+").matchEntire(it.text) == null },
+    matchToken { it is Token.Text && it.text == "(" },
+    // This might need more reinforcements
+    collectUntil { it !is Token.Text || it.text == ")" },
+    matchToken { it is Token.Text && it.text == ")" }
+).map { (hashTok, metricTokens, lparen, valueTokens, rparen) ->
+    OrgInlineElem.HashMetric(
+        metric = metricTokens.joinToString("") { it.text },
+        value = valueTokens.joinToString("") { it.text },
+        tokens = collectTokens(hashTok, metricTokens, lparen, valueTokens, rparen)
+    )
+}
 
 /**
  * Parse an org mode link
@@ -238,6 +255,7 @@ private val parseSingleInlineElem: Parser<OrgInlineElem> = oneOf(
     parseDTRange,
     parseDTStamp,
     parseLink,
+    parseHashMetric,
     parseHashTag,
     //parseBold,
     //parseItalic,
