@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>xyz.lepisma.orgmode.core</title>
+    <link href="../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../styles/style.css" rel="Stylesheet">
+<link href="../../styles/main.css" rel="Stylesheet">
+<link href="../../styles/prism.css" rel="Stylesheet">
+<link href="../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<link href="../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../ui-kit/ui-kit.min.js" defer="defer"></script>
+<script type="text/javascript" src="../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+    <div class="root">
+    <nav class="navigation theme-dark" id="navigation-wrapper">
+            <a class="library-name--link" href="../../index.html">
+                    orgmode
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+0.3.0        </div>
+        <div class="navigation-controls">
+        <div class="filter-section filter-section_loading" id="filter-section">
+                <button class="platform-tag platform-selector common-like" data-active=""
+                        data-filter=":orgmode:dokkaHtml/commonMain">common</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox">
+                    <div class="dropdown--header"><span>Platform filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close platform filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":orgmode:dokkaHtml/commonMain"
+                                       data-filter=":orgmode:dokkaHtml/commonMain"/>
+                                <span class="checkbox--icon"></span>
+                                common
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </div>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                    <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                        data-role="dropdown-listbox">
+                        <div class="dropdown--header">
+                            <span>
+                                    orgmode
+                            </span>
+                            <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                                <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                            </button>
+                        </div>
+                        <div class="sidebar--inner" id="sideMenu"></div>
+                    </ul>
+                    <div class="dropdown--overlay"></div>
+                </div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="package" id="content" pageIds="orgmode::xyz.lepisma.orgmode.core////PointingToDeclaration//169169511">
+  <div class="breadcrumbs"><a href="../../index.html">orgmode</a><span class="delimiter">/</span><span class="current">xyz.lepisma.orgmode.core</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Package-level</span></span> <span><span>declarations</span></span></h1>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="TYPE">Types</button><button class="section-tab" data-togglable="FUNCTION,EXTENSION_FUNCTION">Functions</button><button class="section-tab" data-togglable="PROPERTY,EXTENSION_PROPERTY">Properties</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="-1784084713%2FClasslikes%2F169169511" anchor-label="Parser" id="-1784084713%2FClasslikes%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-parser/index.html"><span><span>Parser</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1784084713%2FClasslikes%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><span class="token keyword">interface </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="-parser/index.html">T</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Type of a parsing function which takes the list of all tokens and the current working position.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1105617951%2FClasslikes%2F169169511" anchor-label="ParsingResult" id="1105617951%2FClasslikes%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-parsing-result/index.html"><span>Parsing</span><wbr></wbr><span><span>Result</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1105617951%2FClasslikes%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">sealed </span><span class="token keyword">class </span><a href="-parsing-result/index.html">ParsingResult</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="-parsing-result/index.html">T</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Output from a parser</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1315691355%2FClasslikes%2F169169511" anchor-label="Tuple10" id="-1315691355%2FClasslikes%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-tuple10/index.html"><span><span>Tuple10</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1315691355%2FClasslikes%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-tuple10/index.html">Tuple10</a><span class="token operator">&lt;</span><a href="-tuple10/index.html">T1</a><span class="token punctuation">, </span><a href="-tuple10/index.html">T2</a><span class="token punctuation">, </span><a href="-tuple10/index.html">T3</a><span class="token punctuation">, </span><a href="-tuple10/index.html">T4</a><span class="token punctuation">, </span><a href="-tuple10/index.html">T5</a><span class="token punctuation">, </span><a href="-tuple10/index.html">T6</a><span class="token punctuation">, </span><a href="-tuple10/index.html">T7</a><span class="token punctuation">, </span><a href="-tuple10/index.html">T8</a><span class="token punctuation">, </span><a href="-tuple10/index.html">T9</a><span class="token punctuation">, </span><a href="-tuple10/index.html">T10</a><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>first<span class="token operator">: </span><a href="-tuple10/index.html">T1</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>second<span class="token operator">: </span><a href="-tuple10/index.html">T2</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>third<span class="token operator">: </span><a href="-tuple10/index.html">T3</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>fourth<span class="token operator">: </span><a href="-tuple10/index.html">T4</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>fifth<span class="token operator">: </span><a href="-tuple10/index.html">T5</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>sixth<span class="token operator">: </span><a href="-tuple10/index.html">T6</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>seventh<span class="token operator">: </span><a href="-tuple10/index.html">T7</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>eighth<span class="token operator">: </span><a href="-tuple10/index.html">T8</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>ninth<span class="token operator">: </span><a href="-tuple10/index.html">T9</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>tenth<span class="token operator">: </span><a href="-tuple10/index.html">T10</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1680838038%2FClasslikes%2F169169511" anchor-label="Tuple4" id="-1680838038%2FClasslikes%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-tuple4/index.html"><span><span>Tuple4</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1680838038%2FClasslikes%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-tuple4/index.html">Tuple4</a><span class="token operator">&lt;</span><a href="-tuple4/index.html">T1</a><span class="token punctuation">, </span><a href="-tuple4/index.html">T2</a><span class="token punctuation">, </span><a href="-tuple4/index.html">T3</a><span class="token punctuation">, </span><a href="-tuple4/index.html">T4</a><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>first<span class="token operator">: </span><a href="-tuple4/index.html">T1</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>second<span class="token operator">: </span><a href="-tuple4/index.html">T2</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>third<span class="token operator">: </span><a href="-tuple4/index.html">T3</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>fourth<span class="token operator">: </span><a href="-tuple4/index.html">T4</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1649818231%2FClasslikes%2F169169511" anchor-label="Tuple5" id="-1649818231%2FClasslikes%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-tuple5/index.html"><span><span>Tuple5</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1649818231%2FClasslikes%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-tuple5/index.html">Tuple5</a><span class="token operator">&lt;</span><a href="-tuple5/index.html">T1</a><span class="token punctuation">, </span><a href="-tuple5/index.html">T2</a><span class="token punctuation">, </span><a href="-tuple5/index.html">T3</a><span class="token punctuation">, </span><a href="-tuple5/index.html">T4</a><span class="token punctuation">, </span><a href="-tuple5/index.html">T5</a><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>first<span class="token operator">: </span><a href="-tuple5/index.html">T1</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>second<span class="token operator">: </span><a href="-tuple5/index.html">T2</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>third<span class="token operator">: </span><a href="-tuple5/index.html">T3</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>fourth<span class="token operator">: </span><a href="-tuple5/index.html">T4</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>fifth<span class="token operator">: </span><a href="-tuple5/index.html">T5</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1618798424%2FClasslikes%2F169169511" anchor-label="Tuple6" id="-1618798424%2FClasslikes%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-tuple6/index.html"><span><span>Tuple6</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1618798424%2FClasslikes%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-tuple6/index.html">Tuple6</a><span class="token operator">&lt;</span><a href="-tuple6/index.html">T1</a><span class="token punctuation">, </span><a href="-tuple6/index.html">T2</a><span class="token punctuation">, </span><a href="-tuple6/index.html">T3</a><span class="token punctuation">, </span><a href="-tuple6/index.html">T4</a><span class="token punctuation">, </span><a href="-tuple6/index.html">T5</a><span class="token punctuation">, </span><a href="-tuple6/index.html">T6</a><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>first<span class="token operator">: </span><a href="-tuple6/index.html">T1</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>second<span class="token operator">: </span><a href="-tuple6/index.html">T2</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>third<span class="token operator">: </span><a href="-tuple6/index.html">T3</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>fourth<span class="token operator">: </span><a href="-tuple6/index.html">T4</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>fifth<span class="token operator">: </span><a href="-tuple6/index.html">T5</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>sixth<span class="token operator">: </span><a href="-tuple6/index.html">T6</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1587778617%2FClasslikes%2F169169511" anchor-label="Tuple7" id="-1587778617%2FClasslikes%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-tuple7/index.html"><span><span>Tuple7</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1587778617%2FClasslikes%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-tuple7/index.html">Tuple7</a><span class="token operator">&lt;</span><a href="-tuple7/index.html">T1</a><span class="token punctuation">, </span><a href="-tuple7/index.html">T2</a><span class="token punctuation">, </span><a href="-tuple7/index.html">T3</a><span class="token punctuation">, </span><a href="-tuple7/index.html">T4</a><span class="token punctuation">, </span><a href="-tuple7/index.html">T5</a><span class="token punctuation">, </span><a href="-tuple7/index.html">T6</a><span class="token punctuation">, </span><a href="-tuple7/index.html">T7</a><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>first<span class="token operator">: </span><a href="-tuple7/index.html">T1</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>second<span class="token operator">: </span><a href="-tuple7/index.html">T2</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>third<span class="token operator">: </span><a href="-tuple7/index.html">T3</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>fourth<span class="token operator">: </span><a href="-tuple7/index.html">T4</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>fifth<span class="token operator">: </span><a href="-tuple7/index.html">T5</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>sixth<span class="token operator">: </span><a href="-tuple7/index.html">T6</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>seventh<span class="token operator">: </span><a href="-tuple7/index.html">T7</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1556758810%2FClasslikes%2F169169511" anchor-label="Tuple8" id="-1556758810%2FClasslikes%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-tuple8/index.html"><span><span>Tuple8</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1556758810%2FClasslikes%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-tuple8/index.html">Tuple8</a><span class="token operator">&lt;</span><a href="-tuple8/index.html">T1</a><span class="token punctuation">, </span><a href="-tuple8/index.html">T2</a><span class="token punctuation">, </span><a href="-tuple8/index.html">T3</a><span class="token punctuation">, </span><a href="-tuple8/index.html">T4</a><span class="token punctuation">, </span><a href="-tuple8/index.html">T5</a><span class="token punctuation">, </span><a href="-tuple8/index.html">T6</a><span class="token punctuation">, </span><a href="-tuple8/index.html">T7</a><span class="token punctuation">, </span><a href="-tuple8/index.html">T8</a><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>first<span class="token operator">: </span><a href="-tuple8/index.html">T1</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>second<span class="token operator">: </span><a href="-tuple8/index.html">T2</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>third<span class="token operator">: </span><a href="-tuple8/index.html">T3</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>fourth<span class="token operator">: </span><a href="-tuple8/index.html">T4</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>fifth<span class="token operator">: </span><a href="-tuple8/index.html">T5</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>sixth<span class="token operator">: </span><a href="-tuple8/index.html">T6</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>seventh<span class="token operator">: </span><a href="-tuple8/index.html">T7</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>eighth<span class="token operator">: </span><a href="-tuple8/index.html">T8</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1525739003%2FClasslikes%2F169169511" anchor-label="Tuple9" id="-1525739003%2FClasslikes%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-tuple9/index.html"><span><span>Tuple9</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1525739003%2FClasslikes%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-tuple9/index.html">Tuple9</a><span class="token operator">&lt;</span><a href="-tuple9/index.html">T1</a><span class="token punctuation">, </span><a href="-tuple9/index.html">T2</a><span class="token punctuation">, </span><a href="-tuple9/index.html">T3</a><span class="token punctuation">, </span><a href="-tuple9/index.html">T4</a><span class="token punctuation">, </span><a href="-tuple9/index.html">T5</a><span class="token punctuation">, </span><a href="-tuple9/index.html">T6</a><span class="token punctuation">, </span><a href="-tuple9/index.html">T7</a><span class="token punctuation">, </span><a href="-tuple9/index.html">T8</a><span class="token punctuation">, </span><a href="-tuple9/index.html">T9</a><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>first<span class="token operator">: </span><a href="-tuple9/index.html">T1</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>second<span class="token operator">: </span><a href="-tuple9/index.html">T2</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>third<span class="token operator">: </span><a href="-tuple9/index.html">T3</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>fourth<span class="token operator">: </span><a href="-tuple9/index.html">T4</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>fifth<span class="token operator">: </span><a href="-tuple9/index.html">T5</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>sixth<span class="token operator">: </span><a href="-tuple9/index.html">T6</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>seventh<span class="token operator">: </span><a href="-tuple9/index.html">T7</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>eighth<span class="token operator">: </span><a href="-tuple9/index.html">T8</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>ninth<span class="token operator">: </span><a href="-tuple9/index.html">T9</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="1472999922%2FProperties%2F169169511" anchor-label="matchEOF" id="1472999922%2FProperties%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="match-e-o-f.html"><span>match</span><wbr></wbr><span><span>EOF</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1472999922%2FProperties%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="match-e-o-f.html">matchEOF</a><span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="../xyz.lepisma.orgmode/-org-token/index.html">OrgToken</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-963024989%2FProperties%2F169169511" anchor-label="matchLineBreak" id="-963024989%2FProperties%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="match-line-break.html"><span>match</span><wbr></wbr><span>Line</span><wbr></wbr><span><span>Break</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-963024989%2FProperties%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="match-line-break.html">matchLineBreak</a><span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="../xyz.lepisma.orgmode/-org-token/index.html">OrgToken</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2093311708%2FProperties%2F169169511" anchor-label="matchSOF" id="-2093311708%2FProperties%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="match-s-o-f.html"><span>match</span><wbr></wbr><span><span>SOF</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2093311708%2FProperties%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="match-s-o-f.html">matchSOF</a><span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="../xyz.lepisma.orgmode/-org-token/index.html">OrgToken</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1422023912%2FProperties%2F169169511" anchor-label="matchSpace" id="1422023912%2FProperties%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="match-space.html"><span>match</span><wbr></wbr><span><span>Space</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1422023912%2FProperties%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="match-space.html">matchSpace</a><span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="../xyz.lepisma.orgmode/-org-token/index.html">OrgToken</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1595644193%2FProperties%2F169169511" anchor-label="matchSpaces" id="-1595644193%2FProperties%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="match-spaces.html"><span>match</span><wbr></wbr><span><span>Spaces</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1595644193%2FProperties%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="match-spaces.html">matchSpaces</a><span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../xyz.lepisma.orgmode/-org-token/index.html">OrgToken</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1090047390%2FProperties%2F169169511" anchor-label="matchWord" id="-1090047390%2FProperties%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="match-word.html"><span>match</span><wbr></wbr><span><span>Word</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1090047390%2FProperties%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="match-word.html">matchWord</a><span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="-80983123%2FFunctions%2F169169511" anchor-label="collectTokens" id="-80983123%2FFunctions%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="collect-tokens.html"><span>collect</span><wbr></wbr><span><span>Tokens</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-80983123%2FFunctions%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="collect-tokens.html">T</a><span class="token operator">&gt; </span><a href="collect-tokens.html"><span class="token function">collectTokens</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">vararg </span>results<span class="token operator">: </span><a href="collect-tokens.html">T</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../xyz.lepisma.orgmode.lexer/-token/index.html">Token</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2131120684%2FFunctions%2F169169511" anchor-label="collectUntil" id="2131120684%2FFunctions%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="collect-until.html"><span>collect</span><wbr></wbr><span><span>Until</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2131120684%2FFunctions%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="collect-until.html"><span class="token function">collectUntil</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">matchFn<span class="token operator">: </span><span class="token punctuation">(</span><a href="../xyz.lepisma.orgmode.lexer/-token/index.html">Token</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../xyz.lepisma.orgmode.lexer/-token/index.html">Token</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Collect all tokens from current till any one of them matches the given function.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-628509160%2FFunctions%2F169169511" anchor-label="debug" id="-628509160%2FFunctions%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="debug.html"><span><span>debug</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-628509160%2FFunctions%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="debug.html">T</a><span class="token operator">&gt; </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="debug.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="debug.html"><span class="token function">debug</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="debug.html">T</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-520268861%2FFunctions%2F169169511" anchor-label="lazy" id="-520268861%2FFunctions%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="lazy.html"><span><span>lazy</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-520268861%2FFunctions%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="lazy.html">T</a><span class="token operator">&gt; </span><a href="lazy.html"><span class="token function">lazy</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">parserProvider<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="lazy.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="lazy.html">T</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1084058368%2FFunctions%2F169169511" anchor-label="map" id="-1084058368%2FFunctions%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="map.html"><span><span>map</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1084058368%2FFunctions%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="map.html">T</a><span class="token punctuation">, </span><a href="map.html">R</a><span class="token operator">&gt; </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="map.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="map.html"><span class="token function">map</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">transform<span class="token operator">: </span><span class="token punctuation">(</span><a href="map.html">T</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="map.html">R</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="map.html">R</a><span class="token operator">&gt;</span></div><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="map.html">T</a><span class="token punctuation">, </span><a href="map.html">R</a><span class="token operator">&gt; </span><a href="-parsing-result/index.html">ParsingResult</a><span class="token operator">&lt;</span><a href="map.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="map.html"><span class="token function">map</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">transform<span class="token operator">: </span><span class="token punctuation">(</span><a href="map.html">T</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="map.html">R</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-parsing-result/index.html">ParsingResult</a><span class="token operator">&lt;</span><a href="map.html">R</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-267893172%2FFunctions%2F169169511" anchor-label="matchToken" id="-267893172%2FFunctions%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="match-token.html"><span>match</span><wbr></wbr><span><span>Token</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-267893172%2FFunctions%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="match-token.html"><span class="token function">matchToken</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">matchFn<span class="token operator">: </span><span class="token punctuation">(</span><a href="../xyz.lepisma.orgmode.lexer/-token/index.html">Token</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="../xyz.lepisma.orgmode/-org-token/index.html">OrgToken</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Match a single token at current position</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="418052782%2FFunctions%2F169169511" anchor-label="maybe" id="418052782%2FFunctions%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="maybe.html"><span><span>maybe</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="418052782%2FFunctions%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="maybe.html">T</a><span class="token operator">&gt; </span><a href="maybe.html"><span class="token function">maybe</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">parser<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="maybe.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="maybe.html">T</a><span class="token operator">?</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Convert a failed result to success with OrgNothing</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2017273281%2FFunctions%2F169169511" anchor-label="oneOf" id="2017273281%2FFunctions%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="one-of.html"><span>one</span><wbr></wbr><span><span>Of</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2017273281%2FFunctions%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="one-of.html">T</a><span class="token operator">&gt; </span><a href="one-of.html"><span class="token function">oneOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">vararg </span>parsers<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="one-of.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="one-of.html">T</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Match one of the parsers and return the result. Order matters.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-865827848%2FFunctions%2F169169511" anchor-label="oneOrMore" id="-865827848%2FFunctions%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="one-or-more.html"><span>one</span><wbr></wbr><span>Or</span><wbr></wbr><span><span>More</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-865827848%2FFunctions%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="one-or-more.html">T</a><span class="token operator">&gt; </span><a href="one-or-more.html"><span class="token function">oneOrMore</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">parser<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="one-or-more.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="one-or-more.html">T</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Run the same parser many times and return results till a failure. This ensures that at least one parse happens.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="984943418%2FFunctions%2F169169511" anchor-label="parsingError" id="984943418%2FFunctions%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="parsing-error.html"><span>parsing</span><wbr></wbr><span><span>Error</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="984943418%2FFunctions%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="parsing-error.html">T</a><span class="token operator">&gt; </span><a href="parsing-error.html"><span class="token function">parsingError</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">message<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">tokens<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../xyz.lepisma.orgmode.lexer/-token/index.html">Token</a><span class="token operator">&gt;</span><span class="token operator"> = </span>emptyList()</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-parsing-result/-failure/index.html">ParsingResult.Failure</a><span class="token operator">&lt;</span><a href="parsing-error.html">T</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1339329838%2FFunctions%2F169169511" anchor-label="repeat" id="-1339329838%2FFunctions%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="repeat.html"><span><span>repeat</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1339329838%2FFunctions%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="repeat.html">T</a><span class="token operator">&gt; </span><a href="repeat.html"><span class="token function">repeat</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">min<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">max<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter ">parser<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="repeat.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="repeat.html">T</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Repeatedly match the parser from min to max (inclusive) count</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1627092883%2FFunctions%2F169169511" anchor-label="seq" id="-1627092883%2FFunctions%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="seq.html"><span><span>seq</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1627092883%2FFunctions%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="seq.html">T1</a><span class="token punctuation">, </span><a href="seq.html">T2</a><span class="token operator">&gt; </span><a href="seq.html"><span class="token function">seq</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">parser1<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T1</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser2<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T2</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-pair/index.html">Pair</a><span class="token operator">&lt;</span><a href="seq.html">T1</a><span class="token punctuation">, </span><a href="seq.html">T2</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Sequence given parsers and execute them one by one. If any parse fails, stop immediately and return the failed result.</p></div><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="seq.html">T1</a><span class="token punctuation">, </span><a href="seq.html">T2</a><span class="token punctuation">, </span><a href="seq.html">T3</a><span class="token operator">&gt; </span><a href="seq.html"><span class="token function">seq</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">parser1<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T1</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser2<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T2</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser3<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T3</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-triple/index.html">Triple</a><span class="token operator">&lt;</span><a href="seq.html">T1</a><span class="token punctuation">, </span><a href="seq.html">T2</a><span class="token punctuation">, </span><a href="seq.html">T3</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="seq.html">T1</a><span class="token punctuation">, </span><a href="seq.html">T2</a><span class="token punctuation">, </span><a href="seq.html">T3</a><span class="token punctuation">, </span><a href="seq.html">T4</a><span class="token operator">&gt; </span><a href="seq.html"><span class="token function">seq</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">parser1<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T1</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser2<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T2</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser3<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T3</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser4<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T4</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="-tuple4/index.html">Tuple4</a><span class="token operator">&lt;</span><a href="seq.html">T1</a><span class="token punctuation">, </span><a href="seq.html">T2</a><span class="token punctuation">, </span><a href="seq.html">T3</a><span class="token punctuation">, </span><a href="seq.html">T4</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="seq.html">T1</a><span class="token punctuation">, </span><a href="seq.html">T2</a><span class="token punctuation">, </span><a href="seq.html">T3</a><span class="token punctuation">, </span><a href="seq.html">T4</a><span class="token punctuation">, </span><a href="seq.html">T5</a><span class="token operator">&gt; </span><a href="seq.html"><span class="token function">seq</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">parser1<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T1</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser2<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T2</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser3<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T3</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser4<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T4</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser5<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T5</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="-tuple5/index.html">Tuple5</a><span class="token operator">&lt;</span><a href="seq.html">T1</a><span class="token punctuation">, </span><a href="seq.html">T2</a><span class="token punctuation">, </span><a href="seq.html">T3</a><span class="token punctuation">, </span><a href="seq.html">T4</a><span class="token punctuation">, </span><a href="seq.html">T5</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="seq.html">T1</a><span class="token punctuation">, </span><a href="seq.html">T2</a><span class="token punctuation">, </span><a href="seq.html">T3</a><span class="token punctuation">, </span><a href="seq.html">T4</a><span class="token punctuation">, </span><a href="seq.html">T5</a><span class="token punctuation">, </span><a href="seq.html">T6</a><span class="token operator">&gt; </span><a href="seq.html"><span class="token function">seq</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">parser1<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T1</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser2<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T2</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser3<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T3</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser4<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T4</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser5<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T5</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser6<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T6</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="-tuple6/index.html">Tuple6</a><span class="token operator">&lt;</span><a href="seq.html">T1</a><span class="token punctuation">, </span><a href="seq.html">T2</a><span class="token punctuation">, </span><a href="seq.html">T3</a><span class="token punctuation">, </span><a href="seq.html">T4</a><span class="token punctuation">, </span><a href="seq.html">T5</a><span class="token punctuation">, </span><a href="seq.html">T6</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="seq.html">T1</a><span class="token punctuation">, </span><a href="seq.html">T2</a><span class="token punctuation">, </span><a href="seq.html">T3</a><span class="token punctuation">, </span><a href="seq.html">T4</a><span class="token punctuation">, </span><a href="seq.html">T5</a><span class="token punctuation">, </span><a href="seq.html">T6</a><span class="token punctuation">, </span><a href="seq.html">T7</a><span class="token operator">&gt; </span><a href="seq.html"><span class="token function">seq</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">parser1<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T1</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser2<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T2</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser3<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T3</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser4<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T4</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser5<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T5</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser6<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T6</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser7<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T7</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="-tuple7/index.html">Tuple7</a><span class="token operator">&lt;</span><a href="seq.html">T1</a><span class="token punctuation">, </span><a href="seq.html">T2</a><span class="token punctuation">, </span><a href="seq.html">T3</a><span class="token punctuation">, </span><a href="seq.html">T4</a><span class="token punctuation">, </span><a href="seq.html">T5</a><span class="token punctuation">, </span><a href="seq.html">T6</a><span class="token punctuation">, </span><a href="seq.html">T7</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="seq.html">T1</a><span class="token punctuation">, </span><a href="seq.html">T2</a><span class="token punctuation">, </span><a href="seq.html">T3</a><span class="token punctuation">, </span><a href="seq.html">T4</a><span class="token punctuation">, </span><a href="seq.html">T5</a><span class="token punctuation">, </span><a href="seq.html">T6</a><span class="token punctuation">, </span><a href="seq.html">T7</a><span class="token punctuation">, </span><a href="seq.html">T8</a><span class="token operator">&gt; </span><a href="seq.html"><span class="token function">seq</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">parser1<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T1</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser2<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T2</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser3<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T3</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser4<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T4</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser5<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T5</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser6<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T6</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser7<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T7</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser8<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T8</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="-tuple8/index.html">Tuple8</a><span class="token operator">&lt;</span><a href="seq.html">T1</a><span class="token punctuation">, </span><a href="seq.html">T2</a><span class="token punctuation">, </span><a href="seq.html">T3</a><span class="token punctuation">, </span><a href="seq.html">T4</a><span class="token punctuation">, </span><a href="seq.html">T5</a><span class="token punctuation">, </span><a href="seq.html">T6</a><span class="token punctuation">, </span><a href="seq.html">T7</a><span class="token punctuation">, </span><a href="seq.html">T8</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="seq.html">T1</a><span class="token punctuation">, </span><a href="seq.html">T2</a><span class="token punctuation">, </span><a href="seq.html">T3</a><span class="token punctuation">, </span><a href="seq.html">T4</a><span class="token punctuation">, </span><a href="seq.html">T5</a><span class="token punctuation">, </span><a href="seq.html">T6</a><span class="token punctuation">, </span><a href="seq.html">T7</a><span class="token punctuation">, </span><a href="seq.html">T8</a><span class="token punctuation">, </span><a href="seq.html">T9</a><span class="token operator">&gt; </span><a href="seq.html"><span class="token function">seq</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">parser1<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T1</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser2<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T2</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser3<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T3</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser4<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T4</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser5<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T5</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser6<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T6</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser7<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T7</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser8<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T8</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser9<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T9</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="-tuple9/index.html">Tuple9</a><span class="token operator">&lt;</span><a href="seq.html">T1</a><span class="token punctuation">, </span><a href="seq.html">T2</a><span class="token punctuation">, </span><a href="seq.html">T3</a><span class="token punctuation">, </span><a href="seq.html">T4</a><span class="token punctuation">, </span><a href="seq.html">T5</a><span class="token punctuation">, </span><a href="seq.html">T6</a><span class="token punctuation">, </span><a href="seq.html">T7</a><span class="token punctuation">, </span><a href="seq.html">T8</a><span class="token punctuation">, </span><a href="seq.html">T9</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="seq.html">T1</a><span class="token punctuation">, </span><a href="seq.html">T2</a><span class="token punctuation">, </span><a href="seq.html">T3</a><span class="token punctuation">, </span><a href="seq.html">T4</a><span class="token punctuation">, </span><a href="seq.html">T5</a><span class="token punctuation">, </span><a href="seq.html">T6</a><span class="token punctuation">, </span><a href="seq.html">T7</a><span class="token punctuation">, </span><a href="seq.html">T8</a><span class="token punctuation">, </span><a href="seq.html">T9</a><span class="token punctuation">, </span><a href="seq.html">T10</a><span class="token operator">&gt; </span><a href="seq.html"><span class="token function">seq</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">parser1<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T1</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser2<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T2</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser3<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T3</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser4<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T4</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser5<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T5</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser6<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T6</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser7<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T7</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser8<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T8</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser9<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T9</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">parser10<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="seq.html">T10</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="-tuple10/index.html">Tuple10</a><span class="token operator">&lt;</span><a href="seq.html">T1</a><span class="token punctuation">, </span><a href="seq.html">T2</a><span class="token punctuation">, </span><a href="seq.html">T3</a><span class="token punctuation">, </span><a href="seq.html">T4</a><span class="token punctuation">, </span><a href="seq.html">T5</a><span class="token punctuation">, </span><a href="seq.html">T6</a><span class="token punctuation">, </span><a href="seq.html">T7</a><span class="token punctuation">, </span><a href="seq.html">T8</a><span class="token punctuation">, </span><a href="seq.html">T9</a><span class="token punctuation">, </span><a href="seq.html">T10</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1377953166%2FFunctions%2F169169511" anchor-label="zeroOrMore" id="1377953166%2FFunctions%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="zero-or-more.html"><span>zero</span><wbr></wbr><span>Or</span><wbr></wbr><span><span>More</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1377953166%2FFunctions%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="zero-or-more.html">T</a><span class="token operator">&gt; </span><a href="zero-or-more.html"><span class="token function">zeroOrMore</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">parser<span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="zero-or-more.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="zero-or-more.html">T</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Run the same parser many times and return results till a failure.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+        <span>© 2025 Copyright</span>
+        <span class="pull-right">
+            <span>Generated by </span>
+            <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                <span>dokka</span>
+            </a>
+        </span>
+    </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

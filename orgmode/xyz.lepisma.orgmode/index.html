@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>xyz.lepisma.orgmode</title>
+    <link href="../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../styles/style.css" rel="Stylesheet">
+<link href="../../styles/main.css" rel="Stylesheet">
+<link href="../../styles/prism.css" rel="Stylesheet">
+<link href="../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<link href="../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../ui-kit/ui-kit.min.js" defer="defer"></script>
+<script type="text/javascript" src="../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+    <div class="root">
+    <nav class="navigation theme-dark" id="navigation-wrapper">
+            <a class="library-name--link" href="../../index.html">
+                    orgmode
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+0.3.0        </div>
+        <div class="navigation-controls">
+        <div class="filter-section filter-section_loading" id="filter-section">
+                <button class="platform-tag platform-selector common-like" data-active=""
+                        data-filter=":orgmode:dokkaHtml/commonMain">common</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox">
+                    <div class="dropdown--header"><span>Platform filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close platform filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":orgmode:dokkaHtml/commonMain"
+                                       data-filter=":orgmode:dokkaHtml/commonMain"/>
+                                <span class="checkbox--icon"></span>
+                                common
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </div>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                    <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                        data-role="dropdown-listbox">
+                        <div class="dropdown--header">
+                            <span>
+                                    orgmode
+                            </span>
+                            <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                                <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                            </button>
+                        </div>
+                        <div class="sidebar--inner" id="sideMenu"></div>
+                    </ul>
+                    <div class="dropdown--overlay"></div>
+                </div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="package" id="content" pageIds="orgmode::xyz.lepisma.orgmode////PointingToDeclaration//169169511">
+  <div class="breadcrumbs"><a href="../../index.html">orgmode</a><span class="delimiter">/</span><span class="current">xyz.lepisma.orgmode</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Package-level</span></span> <span><span>declarations</span></span></h1>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="TYPE">Types</button><button class="section-tab" data-togglable="FUNCTION,EXTENSION_FUNCTION">Functions</button><button class="section-tab" data-togglable="PROPERTY,EXTENSION_PROPERTY">Properties</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="265519026%2FClasslikes%2F169169511" anchor-label="OrgBlock" id="265519026%2FClasslikes%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-org-block/index.html"><span>Org</span><wbr></wbr><span><span>Block</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="265519026%2FClasslikes%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">sealed </span><span class="token keyword">class </span><a href="-org-block/index.html">OrgBlock</a> : <a href="-org-elem/index.html">OrgElem</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2036171310%2FClasslikes%2F169169511" anchor-label="OrgChunk" id="-2036171310%2FClasslikes%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-org-chunk/index.html"><span>Org</span><wbr></wbr><span><span>Chunk</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2036171310%2FClasslikes%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">sealed </span><span class="token keyword">class </span><a href="-org-chunk/index.html">OrgChunk</a> : <a href="-org-elem/index.html">OrgElem</a></div><div class="brief "><p class="paragraph">A chunk is a block of org mode text that can be of various types as listed here</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1541364408%2FClasslikes%2F169169511" anchor-label="OrgDocument" id="-1541364408%2FClasslikes%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-org-document/index.html"><span>Org</span><wbr></wbr><span><span>Document</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1541364408%2FClasslikes%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-org-document/index.html">OrgDocument</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>preamble<span class="token operator">: </span><a href="-org-preamble/index.html">OrgPreamble</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>preface<span class="token operator">: </span><a href="-org-preface/index.html">OrgPreface</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>content<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="-org-section/index.html">OrgSection</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>tokens<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../xyz.lepisma.orgmode.lexer/-token/index.html">Token</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span> : <a href="-org-elem/index.html">OrgElem</a></div><div class="brief "><p class="paragraph">Represents org document with all info present 'in' the file.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1804104108%2FClasslikes%2F169169511" anchor-label="OrgElem" id="-1804104108%2FClasslikes%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-org-elem/index.html"><span>Org</span><wbr></wbr><span><span>Elem</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1804104108%2FClasslikes%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">sealed </span><span class="token keyword">interface </span><a href="-org-elem/index.html">OrgElem</a></div><div class="brief "><p class="paragraph">Any parsed org element which keeps tracks of the tokens used in parsing</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1987395677%2FClasslikes%2F169169511" anchor-label="OrgHeading" id="1987395677%2FClasslikes%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-org-heading/index.html"><span>Org</span><wbr></wbr><span><span>Heading</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1987395677%2FClasslikes%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-org-heading/index.html">OrgHeading</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>title<span class="token operator">: </span><a href="-org-line/index.html">OrgLine</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>level<span class="token operator">: </span><a href="-org-heading-level/index.html">OrgHeadingLevel</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>tags<span class="token operator">: </span><a href="-org-tags/index.html">OrgTags</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>todoState<span class="token operator">: </span><a href="-org-t-o-d-o-state/index.html">OrgTODOState</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>priority<span class="token operator">: </span><a href="-org-priority/index.html">OrgPriority</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>planningInfo<span class="token operator">: </span><a href="-org-planning-info/index.html">OrgPlanningInfo</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>properties<span class="token operator">: </span><a href="-org-properties/index.html">OrgProperties</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>tokens<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../xyz.lepisma.orgmode.lexer/-token/index.html">Token</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span> : <a href="-org-elem/index.html">OrgElem</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1316809567%2FClasslikes%2F169169511" anchor-label="OrgHeadingLevel" id="-1316809567%2FClasslikes%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-org-heading-level/index.html"><span>Org</span><wbr></wbr><span>Heading</span><wbr></wbr><span><span>Level</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1316809567%2FClasslikes%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-org-heading-level/index.html">OrgHeadingLevel</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>level<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>tokens<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../xyz.lepisma.orgmode.lexer/-token/index.html">Token</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span> : <a href="-org-elem/index.html">OrgElem</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="374393019%2FClasslikes%2F169169511" anchor-label="OrgInlineElem" id="374393019%2FClasslikes%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-org-inline-elem/index.html"><span>Org</span><wbr></wbr><span>Inline</span><wbr></wbr><span><span>Elem</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="374393019%2FClasslikes%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">sealed </span><span class="token keyword">class </span><a href="-org-inline-elem/index.html">OrgInlineElem</a> : <a href="-org-elem/index.html">OrgElem</a></div><div class="brief "><p class="paragraph">A piece of text in org mode with consistent styling and interpretation</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-666716785%2FClasslikes%2F169169511" anchor-label="OrgLine" id="-666716785%2FClasslikes%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-org-line/index.html"><span>Org</span><wbr></wbr><span><span>Line</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-666716785%2FClasslikes%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-org-line/index.html">OrgLine</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>items<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="-org-inline-elem/index.html">OrgInlineElem</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>tokens<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../xyz.lepisma.orgmode.lexer/-token/index.html">Token</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span> : <a href="-org-elem/index.html">OrgElem</a></div><div class="brief "><p class="paragraph">A single line string with Org Mode formatting enabled</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="311683109%2FClasslikes%2F169169511" anchor-label="OrgList" id="311683109%2FClasslikes%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-org-list/index.html"><span>Org</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="311683109%2FClasslikes%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">sealed </span><span class="token keyword">class </span><a href="-org-list/index.html">OrgList</a></div><div class="brief "><p class="paragraph">Org list which could have nested lists inside or list content</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="924635836%2FClasslikes%2F169169511" anchor-label="OrgListCheckState" id="924635836%2FClasslikes%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-org-list-check-state/index.html"><span>Org</span><wbr></wbr><span>List</span><wbr></wbr><span>Check</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="924635836%2FClasslikes%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-org-list-check-state/index.html">OrgListCheckState</a> : <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><a href="-org-list-check-state/index.html">OrgListCheckState</a><span class="token operator">&gt; </span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1405231295%2FClasslikes%2F169169511" anchor-label="OrgOptions" id="-1405231295%2FClasslikes%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-org-options/index.html"><span>Org</span><wbr></wbr><span><span>Options</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1405231295%2FClasslikes%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-org-options/index.html">OrgOptions</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>map<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-map/index.html">Map</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>tokens<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../xyz.lepisma.orgmode.lexer/-token/index.html">Token</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span> : <a href="-org-elem/index.html">OrgElem</a></div><div class="brief "><p class="paragraph">Options that could go in top of the file, code block headers, etc.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-646395014%2FClasslikes%2F169169511" anchor-label="OrgOrderedListMarker" id="-646395014%2FClasslikes%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-org-ordered-list-marker/index.html"><span>Org</span><wbr></wbr><span>Ordered</span><wbr></wbr><span>List</span><wbr></wbr><span><span>Marker</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-646395014%2FClasslikes%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-org-ordered-list-marker/index.html">OrgOrderedListMarker</a> : <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><a href="-org-ordered-list-marker/index.html">OrgOrderedListMarker</a><span class="token operator">&gt; </span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2141557045%2FClasslikes%2F169169511" anchor-label="OrgParsingError" id="-2141557045%2FClasslikes%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-org-parsing-error/index.html"><span>Org</span><wbr></wbr><span>Parsing</span><wbr></wbr><span><span>Error</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2141557045%2FClasslikes%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-org-parsing-error/index.html">OrgParsingError</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>message<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>tokens<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../xyz.lepisma.orgmode.lexer/-token/index.html">Token</a><span class="token operator">&gt;</span><span class="token operator"> = </span>emptyList()</span></span><span class="token punctuation">)</span> : <a href="-org-elem/index.html">OrgElem</a></div><div class="brief "><p class="paragraph">Represents parsing error of all kinds</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2077575752%2FClasslikes%2F169169511" anchor-label="OrgPlanningInfo" id="-2077575752%2FClasslikes%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-org-planning-info/index.html"><span>Org</span><wbr></wbr><span>Planning</span><wbr></wbr><span><span>Info</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2077575752%2FClasslikes%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-org-planning-info/index.html">OrgPlanningInfo</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>scheduled<span class="token operator">: </span><a href="-org-inline-elem/-d-t-stamp/index.html">OrgInlineElem.DTStamp</a><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>deadline<span class="token operator">: </span><a href="-org-inline-elem/-d-t-stamp/index.html">OrgInlineElem.DTStamp</a><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>closed<span class="token operator">: </span><a href="-org-inline-elem/-d-t-stamp/index.html">OrgInlineElem.DTStamp</a><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>tokens<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../xyz.lepisma.orgmode.lexer/-token/index.html">Token</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span> : <a href="-org-elem/index.html">OrgElem</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-565098857%2FClasslikes%2F169169511" anchor-label="OrgPreamble" id="-565098857%2FClasslikes%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-org-preamble/index.html"><span>Org</span><wbr></wbr><span><span>Preamble</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-565098857%2FClasslikes%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-org-preamble/index.html">OrgPreamble</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>title<span class="token operator">: </span><a href="-org-line/index.html">OrgLine</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>author<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>email<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>date<span class="token operator">: </span><span data-unresolved-link="kotlinx.datetime/LocalDate///PointingToDeclaration/">LocalDate</span><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>category<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>filetags<span class="token operator">: </span><a href="-org-tags/index.html">OrgTags</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>tags<span class="token operator">: </span><a href="-org-tags/index.html">OrgTags</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>options<span class="token operator">: </span><a href="-org-options/index.html">OrgOptions</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>pile<span class="token operator">: </span><a href="-org-options/index.html">OrgOptions</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>properties<span class="token operator">: </span><a href="-org-properties/index.html">OrgProperties</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>tokens<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../xyz.lepisma.orgmode.lexer/-token/index.html">Token</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span> : <a href="-org-elem/index.html">OrgElem</a></div><div class="brief "><p class="paragraph">Preamble is everything that comes in the start before the actual content starts</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="476399775%2FClasslikes%2F169169511" anchor-label="OrgPreface" id="476399775%2FClasslikes%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-org-preface/index.html"><span>Org</span><wbr></wbr><span><span>Preface</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="476399775%2FClasslikes%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-org-preface/index.html">OrgPreface</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>body<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="-org-chunk/index.html">OrgChunk</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>tokens<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../xyz.lepisma.orgmode.lexer/-token/index.html">Token</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span> : <a href="-org-elem/index.html">OrgElem</a></div><div class="brief "><p class="paragraph">Preface contains the chunks before first heading</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1892714273%2FClasslikes%2F169169511" anchor-label="OrgPriority" id="-1892714273%2FClasslikes%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-org-priority/index.html"><span>Org</span><wbr></wbr><span><span>Priority</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1892714273%2FClasslikes%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-org-priority/index.html">OrgPriority</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>priority<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>text<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>tokens<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../xyz.lepisma.orgmode.lexer/-token/index.html">Token</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span> : <a href="-org-elem/index.html">OrgElem</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="679184304%2FClasslikes%2F169169511" anchor-label="OrgProperties" id="679184304%2FClasslikes%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-org-properties/index.html"><span>Org</span><wbr></wbr><span><span>Properties</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="679184304%2FClasslikes%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-org-properties/index.html">OrgProperties</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>map<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-map/index.html">Map</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span><a href="-org-line/index.html">OrgLine</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>tokens<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../xyz.lepisma.orgmode.lexer/-token/index.html">Token</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span> : <a href="-org-elem/index.html">OrgElem</a></div><div class="brief "><p class="paragraph">Unlike simple options, org properties could have full fledged org-mode text</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="757200090%2FClasslikes%2F169169511" anchor-label="OrgSection" id="757200090%2FClasslikes%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-org-section/index.html"><span>Org</span><wbr></wbr><span><span>Section</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="757200090%2FClasslikes%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-org-section/index.html">OrgSection</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>heading<span class="token operator">: </span><a href="-org-heading/index.html">OrgHeading</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>body<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="-org-chunk/index.html">OrgChunk</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>tokens<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../xyz.lepisma.orgmode.lexer/-token/index.html">Token</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span> : <a href="-org-chunk/index.html">OrgChunk</a>, <a href="-org-elem/index.html">OrgElem</a></div><div class="brief "><p class="paragraph">A section is an org chunk with heading attached to it</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="148402263%2FClasslikes%2F169169511" anchor-label="OrgTableRow" id="148402263%2FClasslikes%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-org-table-row/index.html"><span>Org</span><wbr></wbr><span>Table</span><wbr></wbr><span><span>Row</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="148402263%2FClasslikes%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-org-table-row/index.html">OrgTableRow</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>cells<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="-org-line/index.html">OrgLine</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>tokens<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../xyz.lepisma.orgmode.lexer/-token/index.html">Token</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span> : <a href="-org-elem/index.html">OrgElem</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="618968330%2FClasslikes%2F169169511" anchor-label="OrgTags" id="618968330%2FClasslikes%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-org-tags/index.html"><span>Org</span><wbr></wbr><span><span>Tags</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="618968330%2FClasslikes%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-org-tags/index.html">OrgTags</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>tags<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>tokens<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../xyz.lepisma.orgmode.lexer/-token/index.html">Token</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span> : <a href="-org-elem/index.html">OrgElem</a></div><div class="brief "><p class="paragraph">Tags for files or headings or anywhere else</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1600296692%2FClasslikes%2F169169511" anchor-label="OrgTODOState" id="1600296692%2FClasslikes%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-org-t-o-d-o-state/index.html"><span>Org</span><wbr></wbr><span><span>TODOState</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1600296692%2FClasslikes%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-org-t-o-d-o-state/index.html">OrgTODOState</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>text<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>isDone<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>tokens<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../xyz.lepisma.orgmode.lexer/-token/index.html">Token</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span> : <a href="-org-elem/index.html">OrgElem</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1288780742%2FClasslikes%2F169169511" anchor-label="OrgToken" id="1288780742%2FClasslikes%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-org-token/index.html"><span>Org</span><wbr></wbr><span><span>Token</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1288780742%2FClasslikes%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-org-token/index.html">OrgToken</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">var </span>tokens<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../xyz.lepisma.orgmode.lexer/-token/index.html">Token</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span> : <a href="-org-elem/index.html">OrgElem</a></div><div class="brief "><p class="paragraph">Represents a plain token parse</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1000875859%2FClasslikes%2F169169511" anchor-label="OrgUnorderedListMarker" id="1000875859%2FClasslikes%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-org-unordered-list-marker/index.html"><span>Org</span><wbr></wbr><span>Unordered</span><wbr></wbr><span>List</span><wbr></wbr><span><span>Marker</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1000875859%2FClasslikes%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-org-unordered-list-marker/index.html">OrgUnorderedListMarker</a> : <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><a href="-org-unordered-list-marker/index.html">OrgUnorderedListMarker</a><span class="token operator">&gt; </span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="2126736430%2FProperties%2F169169511" anchor-label="parseAsideBlock" id="2126736430%2FProperties%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="parse-aside-block.html"><span>parse</span><wbr></wbr><span>Aside</span><wbr></wbr><span><span>Block</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2126736430%2FProperties%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="parse-aside-block.html">parseAsideBlock</a><span class="token operator">: </span><a href="../xyz.lepisma.orgmode.core/-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="-org-block/-org-aside-block/index.html">OrgBlock.OrgAsideBlock</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="53523754%2FProperties%2F169169511" anchor-label="parseChunk" id="53523754%2FProperties%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="parse-chunk.html"><span>parse</span><wbr></wbr><span><span>Chunk</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="53523754%2FProperties%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="parse-chunk.html">parseChunk</a><span class="token operator">: </span><a href="../xyz.lepisma.orgmode.core/-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="-org-chunk/index.html">OrgChunk</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="766846344%2FProperties%2F169169511" anchor-label="parseDocument" id="766846344%2FProperties%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="parse-document.html"><span>parse</span><wbr></wbr><span><span>Document</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="766846344%2FProperties%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="parse-document.html">parseDocument</a><span class="token operator">: </span><a href="../xyz.lepisma.orgmode.core/-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="-org-document/index.html">OrgDocument</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1666659946%2FProperties%2F169169511" anchor-label="parseDTRange" id="1666659946%2FProperties%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="parse-d-t-range.html"><span>parse</span><wbr></wbr><span><span>DTRange</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1666659946%2FProperties%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="parse-d-t-range.html">parseDTRange</a><span class="token operator">: </span><a href="../xyz.lepisma.orgmode.core/-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="-org-inline-elem/-d-t-range/index.html">OrgInlineElem.DTRange</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Parse a datetime range. This is not just time range which is usually represented in the datetime stamp itself.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1500418396%2FProperties%2F169169511" anchor-label="parseDTStamp" id="-1500418396%2FProperties%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="parse-d-t-stamp.html"><span>parse</span><wbr></wbr><span><span>DTStamp</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1500418396%2FProperties%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="parse-d-t-stamp.html">parseDTStamp</a><span class="token operator">: </span><a href="../xyz.lepisma.orgmode.core/-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="-org-inline-elem/-d-t-stamp/index.html">OrgInlineElem.DTStamp</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Parse single datetime stamp</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="755556063%2FProperties%2F169169511" anchor-label="parseEditsBlock" id="755556063%2FProperties%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="parse-edits-block.html"><span>parse</span><wbr></wbr><span>Edits</span><wbr></wbr><span><span>Block</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="755556063%2FProperties%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="parse-edits-block.html">parseEditsBlock</a><span class="token operator">: </span><a href="../xyz.lepisma.orgmode.core/-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="-org-block/-org-edits-block/index.html">OrgBlock.OrgEditsBlock</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1182372682%2FProperties%2F169169511" anchor-label="parseFileKeyword" id="1182372682%2FProperties%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="parse-file-keyword.html"><span>parse</span><wbr></wbr><span>File</span><wbr></wbr><span><span>Keyword</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1182372682%2FProperties%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="parse-file-keyword.html">parseFileKeyword</a><span class="token operator">: </span><a href="../xyz.lepisma.orgmode.core/-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-pair/index.html">Pair</a><span class="token operator">&lt;</span><a href="-org-token/index.html">OrgToken</a><span class="token punctuation">, </span><a href="-org-line/index.html">OrgLine</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1787171291%2FProperties%2F169169511" anchor-label="parseHashMetric" id="-1787171291%2FProperties%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="parse-hash-metric.html"><span>parse</span><wbr></wbr><span>Hash</span><wbr></wbr><span><span>Metric</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1787171291%2FProperties%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="parse-hash-metric.html">parseHashMetric</a><span class="token operator">: </span><a href="../xyz.lepisma.orgmode.core/-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="-org-inline-elem/-hash-metric/index.html">OrgInlineElem.HashMetric</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Parse tags with metrics like #hash-tag(value)</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="32326219%2FProperties%2F169169511" anchor-label="parseHashTag" id="32326219%2FProperties%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="parse-hash-tag.html"><span>parse</span><wbr></wbr><span>Hash</span><wbr></wbr><span><span>Tag</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="32326219%2FProperties%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="parse-hash-tag.html">parseHashTag</a><span class="token operator">: </span><a href="../xyz.lepisma.orgmode.core/-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="-org-inline-elem/-hash-tag/index.html">OrgInlineElem.HashTag</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Parse hashtags like #hash #hash-tag etc.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1315976373%2FProperties%2F169169511" anchor-label="parseHeading" id="1315976373%2FProperties%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="parse-heading.html"><span>parse</span><wbr></wbr><span><span>Heading</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1315976373%2FProperties%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="parse-heading.html">parseHeading</a><span class="token operator">: </span><a href="../xyz.lepisma.orgmode.core/-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="-org-heading/index.html">OrgHeading</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-285748580%2FProperties%2F169169511" anchor-label="parseHeadingTags" id="-285748580%2FProperties%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="parse-heading-tags.html"><span>parse</span><wbr></wbr><span>Heading</span><wbr></wbr><span><span>Tags</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-285748580%2FProperties%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="parse-heading-tags.html">parseHeadingTags</a><span class="token operator">: </span><a href="../xyz.lepisma.orgmode.core/-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="-org-tags/index.html">OrgTags</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="660613773%2FProperties%2F169169511" anchor-label="parseHeadingTitle" id="660613773%2FProperties%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="parse-heading-title.html"><span>parse</span><wbr></wbr><span>Heading</span><wbr></wbr><span><span>Title</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="660613773%2FProperties%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="parse-heading-title.html">parseHeadingTitle</a><span class="token operator">: </span><a href="../xyz.lepisma.orgmode.core/-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="-org-line/index.html">OrgLine</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-408938365%2FProperties%2F169169511" anchor-label="parseHorizontalRule" id="-408938365%2FProperties%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="parse-horizontal-rule.html"><span>parse</span><wbr></wbr><span>Horizontal</span><wbr></wbr><span><span>Rule</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-408938365%2FProperties%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="parse-horizontal-rule.html">parseHorizontalRule</a><span class="token operator">: </span><a href="../xyz.lepisma.orgmode.core/-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="-org-chunk/-org-horizontal-line/index.html">OrgChunk.OrgHorizontalLine</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2082722803%2FProperties%2F169169511" anchor-label="parseLevel" id="2082722803%2FProperties%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="parse-level.html"><span>parse</span><wbr></wbr><span><span>Level</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2082722803%2FProperties%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="parse-level.html">parseLevel</a><span class="token operator">: </span><a href="../xyz.lepisma.orgmode.core/-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="-org-heading-level/index.html">OrgHeadingLevel</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="87859849%2FProperties%2F169169511" anchor-label="parseLink" id="87859849%2FProperties%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="parse-link.html"><span>parse</span><wbr></wbr><span><span>Link</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="87859849%2FProperties%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="parse-link.html">parseLink</a><span class="token operator">: </span><a href="../xyz.lepisma.orgmode.core/-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="-org-inline-elem/-link/index.html">OrgInlineElem.Link</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Parse an org mode link</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="946868863%2FProperties%2F169169511" anchor-label="parseOrgLine" id="946868863%2FProperties%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="parse-org-line.html"><span>parse</span><wbr></wbr><span>Org</span><wbr></wbr><span><span>Line</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="946868863%2FProperties%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="parse-org-line.html">parseOrgLine</a><span class="token operator">: </span><a href="../xyz.lepisma.orgmode.core/-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="-org-line/index.html">OrgLine</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Parse a single line of org inline elements</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-958535085%2FProperties%2F169169511" anchor-label="parsePageIntroBlock" id="-958535085%2FProperties%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="parse-page-intro-block.html"><span>parse</span><wbr></wbr><span>Page</span><wbr></wbr><span>Intro</span><wbr></wbr><span><span>Block</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-958535085%2FProperties%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="parse-page-intro-block.html">parsePageIntroBlock</a><span class="token operator">: </span><a href="../xyz.lepisma.orgmode.core/-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="-org-block/-org-page-intro-block/index.html">OrgBlock.OrgPageIntroBlock</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="459936841%2FProperties%2F169169511" anchor-label="parseParagraph" id="459936841%2FProperties%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="parse-paragraph.html"><span>parse</span><wbr></wbr><span><span>Paragraph</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="459936841%2FProperties%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="parse-paragraph.html">parseParagraph</a><span class="token operator">: </span><a href="../xyz.lepisma.orgmode.core/-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="-org-chunk/-org-paragraph/index.html">OrgChunk.OrgParagraph</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1396786184%2FProperties%2F169169511" anchor-label="parsePlanningInfo" id="-1396786184%2FProperties%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="parse-planning-info.html"><span>parse</span><wbr></wbr><span>Planning</span><wbr></wbr><span><span>Info</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1396786184%2FProperties%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="parse-planning-info.html">parsePlanningInfo</a><span class="token operator">: </span><a href="../xyz.lepisma.orgmode.core/-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="-org-planning-info/index.html">OrgPlanningInfo</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1743111895%2FProperties%2F169169511" anchor-label="parsePreamble" id="1743111895%2FProperties%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="parse-preamble.html"><span>parse</span><wbr></wbr><span><span>Preamble</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1743111895%2FProperties%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="parse-preamble.html">parsePreamble</a><span class="token operator">: </span><a href="../xyz.lepisma.orgmode.core/-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="-org-preamble/index.html">OrgPreamble</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Preamble is everything before the start of actual content.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-195019529%2FProperties%2F169169511" anchor-label="parsePreface" id="-195019529%2FProperties%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="parse-preface.html"><span>parse</span><wbr></wbr><span><span>Preface</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-195019529%2FProperties%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="parse-preface.html">parsePreface</a><span class="token operator">: </span><a href="../xyz.lepisma.orgmode.core/-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="-org-preface/index.html">OrgPreface</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-452056336%2FProperties%2F169169511" anchor-label="parseProperties" id="-452056336%2FProperties%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="parse-properties.html"><span>parse</span><wbr></wbr><span><span>Properties</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-452056336%2FProperties%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="parse-properties.html">parseProperties</a><span class="token operator">: </span><a href="../xyz.lepisma.orgmode.core/-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="-org-properties/index.html">OrgProperties</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-593406350%2FProperties%2F169169511" anchor-label="parseQuoteBlock" id="-593406350%2FProperties%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="parse-quote-block.html"><span>parse</span><wbr></wbr><span>Quote</span><wbr></wbr><span><span>Block</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-593406350%2FProperties%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="parse-quote-block.html">parseQuoteBlock</a><span class="token operator">: </span><a href="../xyz.lepisma.orgmode.core/-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="-org-block/-org-quote-block/index.html">OrgBlock.OrgQuoteBlock</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="85780786%2FProperties%2F169169511" anchor-label="parseSection" id="85780786%2FProperties%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="parse-section.html"><span>parse</span><wbr></wbr><span><span>Section</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="85780786%2FProperties%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="parse-section.html">parseSection</a><span class="token operator">: </span><a href="../xyz.lepisma.orgmode.core/-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="-org-section/index.html">OrgSection</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1425672571%2FProperties%2F169169511" anchor-label="parseSourceBlock" id="-1425672571%2FProperties%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="parse-source-block.html"><span>parse</span><wbr></wbr><span>Source</span><wbr></wbr><span><span>Block</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1425672571%2FProperties%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="parse-source-block.html">parseSourceBlock</a><span class="token operator">: </span><a href="../xyz.lepisma.orgmode.core/-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="-org-block/-org-source-block/index.html">OrgBlock.OrgSourceBlock</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-29898901%2FProperties%2F169169511" anchor-label="parseVerseBlock" id="-29898901%2FProperties%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="parse-verse-block.html"><span>parse</span><wbr></wbr><span>Verse</span><wbr></wbr><span><span>Block</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-29898901%2FProperties%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="parse-verse-block.html">parseVerseBlock</a><span class="token operator">: </span><a href="../xyz.lepisma.orgmode.core/-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="-org-block/-org-verse-block/index.html">OrgBlock.OrgVerseBlock</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="374357129%2FFunctions%2F169169511" anchor-label="orderedList" id="374357129%2FFunctions%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="ordered-list.html"><span>ordered</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="374357129%2FFunctions%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="ordered-list.html"><span class="token function">orderedList</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">indentLevel<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">0</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../xyz.lepisma.orgmode.core/-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="-org-list/-org-ordered-list/index.html">OrgList.OrgOrderedList</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="713802549%2FFunctions%2F169169511" anchor-label="orgLineToTags" id="713802549%2FFunctions%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="org-line-to-tags.html"><span>org</span><wbr></wbr><span>Line</span><wbr></wbr><span>To</span><wbr></wbr><span><span>Tags</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="713802549%2FFunctions%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="org-line-to-tags.html"><span class="token function">orgLineToTags</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">line<span class="token operator">: </span><a href="-org-line/index.html">OrgLine</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-org-tags/index.html">OrgTags</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-797425775%2FFunctions%2F169169511" anchor-label="parse" id="-797425775%2FFunctions%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="parse.html"><span><span>parse</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-797425775%2FFunctions%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="parse.html"><span class="token function">parse</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">tokens<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../xyz.lepisma.orgmode.lexer/-token/index.html">Token</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-org-document/index.html">OrgDocument</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">The main exposed function for parsing an org mode document</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1273405537%2FFunctions%2F169169511" anchor-label="parseInlineElems" id="-1273405537%2FFunctions%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="parse-inline-elems.html"><span>parse</span><wbr></wbr><span>Inline</span><wbr></wbr><span><span>Elems</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1273405537%2FFunctions%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="parse-inline-elems.html"><span class="token function">parseInlineElems</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">stoppingFn<span class="token operator">: </span><span class="token punctuation">(</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../xyz.lepisma.orgmode.lexer/-token/index.html">Token</a><span class="token operator">&gt;</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span>{ false }</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../xyz.lepisma.orgmode.core/-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="-org-inline-elem/index.html">OrgInlineElem</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Build a parser that continues to parse inline element till stopping criteria is met.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2033526678%2FFunctions%2F169169511" anchor-label="parseListItemChunks" id="-2033526678%2FFunctions%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="parse-list-item-chunks.html"><span>parse</span><wbr></wbr><span>List</span><wbr></wbr><span>Item</span><wbr></wbr><span><span>Chunks</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2033526678%2FFunctions%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="parse-list-item-chunks.html"><span class="token function">parseListItemChunks</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">indentLevel<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../xyz.lepisma.orgmode.core/-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="-org-chunk/index.html">OrgChunk</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">This starts after the checkbox, if present, in each list item.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1060053443%2FFunctions%2F169169511" anchor-label="parseOrderedList" id="1060053443%2FFunctions%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="parse-ordered-list.html"><span>parse</span><wbr></wbr><span>Ordered</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1060053443%2FFunctions%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="parse-ordered-list.html"><span class="token function">parseOrderedList</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">tokens<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../xyz.lepisma.orgmode.lexer/-token/index.html">Token</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">pos<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../xyz.lepisma.orgmode.core/-parsing-result/index.html">ParsingResult</a><span class="token operator">&lt;</span><a href="-org-list/-org-ordered-list/index.html">OrgList.OrgOrderedList</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-67491958%2FFunctions%2F169169511" anchor-label="parseUnorderedList" id="-67491958%2FFunctions%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="parse-unordered-list.html"><span>parse</span><wbr></wbr><span>Unordered</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-67491958%2FFunctions%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="parse-unordered-list.html"><span class="token function">parseUnorderedList</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">tokens<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../xyz.lepisma.orgmode.lexer/-token/index.html">Token</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">pos<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../xyz.lepisma.orgmode.core/-parsing-result/index.html">ParsingResult</a><span class="token operator">&lt;</span><a href="-org-list/-org-unordered-list/index.html">OrgList.OrgUnorderedList</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1233580766%2FFunctions%2F169169511" anchor-label="unorderedList" id="-1233580766%2FFunctions%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="unordered-list.html"><span>unordered</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1233580766%2FFunctions%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="unordered-list.html"><span class="token function">unorderedList</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">indentLevel<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">0</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../xyz.lepisma.orgmode.core/-parser/index.html">Parser</a><span class="token operator">&lt;</span><a href="-org-list/-org-unordered-list/index.html">OrgList.OrgUnorderedList</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-796852004%2FFunctions%2F169169511" anchor-label="unparse" id="-796852004%2FFunctions%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="unparse.html"><span><span>unparse</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-796852004%2FFunctions%2F169169511"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="unparse.html"><span class="token function">unparse</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">document<span class="token operator">: </span><a href="-org-document/index.html">OrgDocument</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../xyz.lepisma.orgmode.lexer/-token/index.html">Token</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Convert a document back to the list to tokens</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+        <span>© 2025 Copyright</span>
+        <span class="pull-right">
+            <span>Generated by </span>
+            <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                <span>dokka</span>
+            </a>
+        </span>
+    </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
