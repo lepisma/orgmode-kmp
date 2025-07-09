@@ -10,6 +10,7 @@ import xyz.lepisma.orgmode.core.collectUntil
 import xyz.lepisma.orgmode.core.debug
 import xyz.lepisma.orgmode.core.map
 import xyz.lepisma.orgmode.core.matchToken
+import xyz.lepisma.orgmode.core.matchWord
 import xyz.lepisma.orgmode.core.maybe
 import xyz.lepisma.orgmode.core.oneOf
 import xyz.lepisma.orgmode.core.oneOrMore
@@ -133,7 +134,15 @@ sealed class OrgInlineElem: OrgElem {
 /**
  * Parse hashtags like #hash #hash-tag etc.
  */
-// val parseHashTag: Parser<OrgInlineElem.HashTag>
+val parseHashTag: Parser<OrgInlineElem.HashTag> = seq(
+    matchToken { it is Token.Text && it.text == "#" },
+    collectUntil { it !is Token.Text || Regex("[a-zA-Z0-9_-]+", option = RegexOption.IGNORE_CASE).matchEntire(it.text) == null }
+).map { (hashTok, tokens) ->
+    OrgInlineElem.HashTag(
+        text = tokens.joinToString("") { it.text },
+        tokens = collectTokens(hashTok, tokens)
+    )
+}
 // val parseHashMetric: Parser<OrgInlineElem.HashMetric>
 
 /**
@@ -229,6 +238,7 @@ private val parseSingleInlineElem: Parser<OrgInlineElem> = oneOf(
     parseDTRange,
     parseDTStamp,
     parseLink,
+    parseHashTag,
     //parseBold,
     //parseItalic,
     //parseUnderline,

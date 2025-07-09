@@ -382,7 +382,7 @@ class OrgParserTest : StringSpec ({
         val tokens = OrgLexer(text).tokenize()
         val parser = seq(matchSOF, parseInlineElems { trail -> trail.last() is Token.EOF }, matchEOF)
         val elems = (parser.invoke(tokens, 0) as ParsingResult.Success).output.second
-        elems.size shouldBe 15
+        elems.size shouldBe 14
     }
 
     "testInlineParsing_LinkParsing without title should work correctly" {
