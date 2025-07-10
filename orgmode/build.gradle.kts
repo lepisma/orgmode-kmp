@@ -61,15 +61,20 @@ tasks.withType<Test>().configureEach {
     useJUnitPlatform()
 }
 
-tasks.dokkaHtml {
+dokka {
     moduleName.set(project.name)
     moduleVersion.set(project.version.toString())
-    outputDirectory.set(layout.buildDirectory.dir("docs"))
 
-    dokkaSourceSets {
-        named("commonMain") {
-            includes.from(project.files(), "src/docs/overview.md")
-        }
+    dokkaPublications.html {
+        suppressInheritedMembers.set(true)
+        failOnWarning.set(true)
+        outputDirectory.set(layout.buildDirectory.dir("docs"))
+    }
+    dokkaSourceSets.commonMain {
+        includes.from(project.files(), "src/docs/overview.md")
+    }
+    pluginsConfiguration.html {
+        footerMessage.set("(c) Abhinav Tushar")
     }
 }
 
