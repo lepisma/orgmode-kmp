@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>orgmode</title>
+    <link href="images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="scripts/sourceset_dependencies.js" async="async"></script>
+<link href="styles/style.css" rel="Stylesheet">
+<link href="styles/main.css" rel="Stylesheet">
+<link href="styles/prism.css" rel="Stylesheet">
+<link href="styles/logo-styles.css" rel="Stylesheet">
+<link href="styles/font-jb-sans-auto.css" rel="Stylesheet">
+<link href="ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="ui-kit/ui-kit.min.js" defer="defer"></script>
+<script type="text/javascript" src="scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+    <div class="root">
+    <nav class="navigation theme-dark" id="navigation-wrapper">
+            <a class="library-name--link" href="index.html">
+                    orgmode
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+0.3.0        </div>
+        <div class="navigation-controls">
+        <div class="filter-section filter-section_loading" id="filter-section">
+                <button class="platform-tag platform-selector common-like" data-active=""
+                        data-filter=":orgmode:dokkaHtml/commonMain">common</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox">
+                    <div class="dropdown--header"><span>Platform filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close platform filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":orgmode:dokkaHtml/commonMain"
+                                       data-filter=":orgmode:dokkaHtml/commonMain"/>
+                                <span class="checkbox--icon"></span>
+                                common
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </div>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                    <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                        data-role="dropdown-listbox">
+                        <div class="dropdown--header">
+                            <span>
+                                    orgmode
+                            </span>
+                            <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                                <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                            </button>
+                        </div>
+                        <div class="sidebar--inner" id="sideMenu"></div>
+                    </ul>
+                    <div class="dropdown--overlay"></div>
+                </div>
+            </div>
+            <div id="main">
+<div class="main-content" id="content" pageIds="orgmode::////PointingToDeclaration//169169511">
+  <div class="breadcrumbs"></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>orgmode</span></span></h1>
+    <div class="platform-hinted UnderCoverText" data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":orgmode:dokkaHtml/commonMain"><p class="paragraph">Kotlin Multiplatform library for parsing, formatting, and working with <a href="https://orgmode.org/">Org Mode</a> files and content.</p><p class="paragraph">The parser is based on parser combinators and you can compose them to make new or variations of  existing parsers. Every parser returns an element of type <a href="orgmode/xyz.lepisma.orgmode/-org-elem/index.html">OrgElem</a>  that also tracks the tokens (<a href="orgmode/xyz.lepisma.orgmode.lexer/-token/index.html">Token</a>) used in making the element.  Each token, in turn, tracks its original position in the string. This allows you to completely go from the parse tree to tokens and further to the string.</p><p class="paragraph">You can make changes in the tree and tokens and then generate a new string. To do this easier, you might want to work with optics using something like <a href="https://arrow-kt.io/learn/immutable-data/">Arrow</a>. Note that while you can change the tokens attached to tree elements easily, changing and updating the text positions for tokens is still manual and could be error-prone. You can keep stale text positions for many common use cases since tokens to string doesn't rely on text positions. A later version of this library will ensure easier operation on positions.</p><h2 class="">Usage</h2><p class="paragraph">There are two stages for using the parser:</p><ol><li><p class="paragraph">Lexing converts an org string to individual xyz.lepisma.orgmode.Token.</p></li><li><p class="paragraph">Parsing converts a list of tokens to any <a href="orgmode/xyz.lepisma.orgmode/-org-elem/index.html">org element</a>.</p></li></ol><p class="paragraph">The root element of a full document is <a href="orgmode/xyz.lepisma.orgmode/-org-document/index.html">OrgDocument</a> which can be parsed like this:</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">val tokens: List&lt;Token&gt; = OrgLexer(orgString).tokenize()<br>val document: OrgDocument? = parse(tokens)</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">Each <a href="orgmode/xyz.lepisma.orgmode/-org-elem/index.html">OrgElem</a> has, usually, its own parser that can be invoked on tokens that build that element up. For using them, you will also be helped by the parser combinators <a href="orgmode/xyz.lepisma.orgmode.core/index.html">here</a>. As an example, here is how to parse a line with an org link:</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">import xyz.lepisma.orgmode.lexer.OrgLexer<br>import xyz.lepisma.orgmode.core.seq<br>import xyz.lepisma.orgmode.core.matchSOF<br>import xyz.lepisma.orgmode.core.matchEOF<br>import xyz.lepisma.orgmode.parseOrgLine<br><br>val text = &quot;this is [[attachment:hello world.pdf]]&quot;<br>val tokens = OrgLexer(text).tokenize()<br>val parser = seq(matchSOF, parseOrgLine, matchEOF)<br><br>// Output is a triple with items matching SOF OrgToken, OrgLine, and EOF OrgToken<br>val line = (parser.invoke(tokens, 0) as ParsingResult.Success).output.second<br><br>// line.items.size shouldBe 5<br>// (line.items.last() is OrgInlineElem.Link) shouldBe true<br>// (line.items.last() as OrgInlineElem.Link).title shouldBe null<br>// (line.items.last() as OrgInlineElem.Link).target shouldBe &quot;hello world.pdf&quot;<br>// (line.items.last() as OrgInlineElem.Link).type shouldBe &quot;attachment&quot;</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><h3 class="">Going back</h3><p class="paragraph">For going from an element to tokens, use the <code class="lang-kotlin">tokens</code> property of the element.  For further going  from tokens to raw string, call <a href="orgmode/xyz.lepisma.orgmode.lexer/inverse-lex.html">inverseLex</a> on the list of tokens.</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">// The following will be true in all cases<br>val reconstructedString = inverseLex(unparse(parse(OrgLexer(orgString).tokenize())!!))<br>reconstructedString shouldBe orgString</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><h2 class="">Supported OrgMode Features</h2><p class="paragraph">The parser is not complete yet, but here are the currently supported elements (lexer capabilities follow whatever is needed for the parser):</p><ol><li><p class="paragraph">Properties blocks, both at document level and under section headings.</p></li><li><p class="paragraph">Document preamble, tags, configs etc. This is not complete but the basic items like title are supported.</p></li><li><p class="paragraph">Ordered, unordered, nested lists with checkboxes.</p></li><li><p class="paragraph">Inside org text, only links, datetime stamps, and datetime ranges are supported. Other markup support is on the way.</p></li><li><p class="paragraph">#hashtags and #hashmetric(value). Note that these are not standard features of Org Mode but I find them helpful.</p></li><li><p class="paragraph">Horizontal line</p></li><li><p class="paragraph">Source, Quote, and Verse blocks</p></li><li><p class="paragraph">Page Intro, Edits, Aside blocks. These are additional features, not present in Org Mode.</p></li><li><p class="paragraph">Headings with tags and planning info</p></li></ol><p class="paragraph">Notable missing items that will be added before calling this parser complete:</p><ol><li><p class="paragraph">Tables</p></li><li><p class="paragraph">Inline markups like bold, italic, etc.</p></li><li><p class="paragraph">LaTeX elements</p></li><li><p class="paragraph">Heading priority and todo state</p></li></ol><p class="paragraph">Other features like footnotes, citations, and anything else missing will be added on a need basis.</p><h3 class="">Combinators</h3><p class="paragraph">The list of parser combinators is relatively complete and can be checked out <a href="orgmode/xyz.lepisma.orgmode.core/index.html">here</a>.</p><h2 class="">Development</h2><p class="paragraph">Development documentation will be added once the library is stabilized.</p></div></div>
+  </div>
+  <h2 class="">Packages</h2>
+  <div class="table"><a data-name="295211451%2FPackages%2F169169511" anchor-label="xyz.lepisma.orgmode" id="295211451%2FPackages%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+    <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="orgmode/xyz.lepisma.orgmode/index.html">xyz.lepisma.orgmode</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="295211451%2FPackages%2F169169511"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag common-like">common</div>
+            </div>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+<a data-name="-790719946%2FPackages%2F169169511" anchor-label="xyz.lepisma.orgmode.core" id="-790719946%2FPackages%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+    <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="orgmode/xyz.lepisma.orgmode.core/index.html">xyz.lepisma.orgmode.core</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-790719946%2FPackages%2F169169511"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag common-like">common</div>
+            </div>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+<a data-name="-1473241129%2FPackages%2F169169511" anchor-label="xyz.lepisma.orgmode.formatter" id="-1473241129%2FPackages%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+    <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="orgmode/xyz.lepisma.orgmode.formatter/index.html">xyz.lepisma.orgmode.formatter</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1473241129%2FPackages%2F169169511"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag common-like">common</div>
+            </div>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+<a data-name="1978331417%2FPackages%2F169169511" anchor-label="xyz.lepisma.orgmode.lexer" id="1978331417%2FPackages%2F169169511" data-filterable-set=":orgmode:dokkaHtml/commonMain"></a>
+    <div class="table-row" data-filterable-current=":orgmode:dokkaHtml/commonMain" data-filterable-set=":orgmode:dokkaHtml/commonMain">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="orgmode/xyz.lepisma.orgmode.lexer/index.html">xyz.lepisma.orgmode.lexer</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1978331417%2FPackages%2F169169511"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag common-like">common</div>
+            </div>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+        <span>© 2025 Copyright</span>
+        <span class="pull-right">
+            <span>Generated by </span>
+            <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                <span>dokka</span>
+            </a>
+        </span>
+    </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
