@@ -102,8 +102,6 @@ $dokka.location:xyz.lepisma.orgmode.core/Tuple9/second/#/PointingToDeclaration/
 $dokka.location:xyz.lepisma.orgmode.core/Tuple9/seventh/#/PointingToDeclaration/orgmode/xyz.lepisma.orgmode.core/-tuple9/seventh.html
 $dokka.location:xyz.lepisma.orgmode.core/Tuple9/sixth/#/PointingToDeclaration/orgmode/xyz.lepisma.orgmode.core/-tuple9/sixth.html
 $dokka.location:xyz.lepisma.orgmode.core/Tuple9/third/#/PointingToDeclaration/orgmode/xyz.lepisma.orgmode.core/-tuple9/third.html
-$dokka.location:xyz.lepisma.orgmode.formatter////PointingToDeclaration/orgmode/xyz.lepisma.orgmode.formatter/index.html
-$dokka.location:xyz.lepisma.orgmode.formatter//unfillText/#kotlin.String/PointingToDeclaration/orgmode/xyz.lepisma.orgmode.formatter/unfill-text.html
 $dokka.location:xyz.lepisma.orgmode.lexer////PointingToDeclaration/orgmode/xyz.lepisma.orgmode.lexer/index.html
 $dokka.location:xyz.lepisma.orgmode.lexer//compareStrings/#kotlin.String#kotlin.String/PointingToDeclaration/orgmode/xyz.lepisma.orgmode.lexer/compare-strings.html
 $dokka.location:xyz.lepisma.orgmode.lexer//inverseLex/#kotlin.collections.List[xyz.lepisma.orgmode.lexer.Token]/PointingToDeclaration/orgmode/xyz.lepisma.orgmode.lexer/inverse-lex.html
@@ -495,6 +493,7 @@ $dokka.location:xyz.lepisma.orgmode.lexer/Token///PointingToDeclaration/orgmode
 $dokka.location:xyz.lepisma.orgmode.lexer/Token/range/#/PointingToDeclaration/orgmode/xyz.lepisma.orgmode.lexer/-token/range.html
 $dokka.location:xyz.lepisma.orgmode.lexer/Token/text/#/PointingToDeclaration/orgmode/xyz.lepisma.orgmode.lexer/-token/text.html
 $dokka.location:xyz.lepisma.orgmode////PointingToDeclaration/orgmode/xyz.lepisma.orgmode/index.html
+$dokka.location:xyz.lepisma.orgmode//formatInlineElemsToPlaintext/#kotlin.collections.List[xyz.lepisma.orgmode.OrgInlineElem]/PointingToDeclaration/orgmode/xyz.lepisma.orgmode/format-inline-elems-to-plaintext.html
 $dokka.location:xyz.lepisma.orgmode//orderedList/#kotlin.Int/PointingToDeclaration/orgmode/xyz.lepisma.orgmode/ordered-list.html
 $dokka.location:xyz.lepisma.orgmode//orgLineToTags/#xyz.lepisma.orgmode.OrgLine/PointingToDeclaration/orgmode/xyz.lepisma.orgmode/org-line-to-tags.html
 $dokka.location:xyz.lepisma.orgmode//parse/#kotlin.collections.List[xyz.lepisma.orgmode.lexer.Token]/PointingToDeclaration/orgmode/xyz.lepisma.orgmode/parse.html
@@ -822,5 +821,4 @@ $dokka.location:xyz.lepisma.orgmode/OrgUnorderedListMarker/valueOf/#kotlin.Strin
 $dokka.location:xyz.lepisma.orgmode/OrgUnorderedListMarker/values/#/PointingToDeclaration/orgmode/xyz.lepisma.orgmode/-org-unordered-list-marker/values.html
 xyz.lepisma.orgmode
 xyz.lepisma.orgmode.core
-xyz.lepisma.orgmode.formatter
 xyz.lepisma.orgmode.lexer
