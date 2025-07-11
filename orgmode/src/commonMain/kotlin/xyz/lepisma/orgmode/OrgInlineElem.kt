@@ -305,3 +305,32 @@ fun parseInlineElems(stoppingFn: (List<Token>) -> Boolean = { false }): Parser<L
         ParsingResult.Success(elements, currentPos)
     }
 }
+
+private fun formatInlineElemToPlainText(elem: OrgInlineElem): String {
+    return when (elem) {
+        is OrgInlineElem.Link -> {
+            if (elem.title != null) {
+                formatInlineElemsToPlaintext(elem.title)
+            } else if (elem.type != null) {
+                "${elem.type}:${elem.target}"
+            } else {
+                elem.target
+            }
+        }
+        is OrgInlineElem.Bold -> formatInlineElemsToPlaintext(elem.content)
+        is OrgInlineElem.Italic -> formatInlineElemsToPlaintext(elem.content)
+        is OrgInlineElem.Underline -> formatInlineElemsToPlaintext(elem.content)
+        is OrgInlineElem.StrikeThrough-> formatInlineElemsToPlaintext(elem.content)
+        is OrgInlineElem.Verbatim -> formatInlineElemsToPlaintext(elem.content)
+        is OrgInlineElem.Code -> formatInlineElemsToPlaintext(elem.content)
+        else ->  elem.tokens.joinToString("") { it.text }
+    }
+}
+
+/**
+ * Convert list of inline elements to plain text. This is not the same as recovering the original
+ * org mode string since markups, links etc. are ignored here.
+ */
+fun formatInlineElemsToPlaintext(elems: List<OrgInlineElem>): String {
+    return elems.joinToString("") { formatInlineElemToPlainText(it) }
+}
