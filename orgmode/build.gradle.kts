@@ -6,11 +6,11 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.vanniktech.mavenPublish)
-    // id("org.jetbrains.dokka") version "2.0.0"
+    id("org.jetbrains.dokka") version "2.0.0"
 }
 
 group = "xyz.lepisma"
-version = "0.3.0"
+version = "0.3.1"
 
 kotlin {
     jvm()
@@ -61,17 +61,17 @@ tasks.withType<Test>().configureEach {
     useJUnitPlatform()
 }
 
-//tasks.dokkaHtml {
-//    moduleName.set(project.name)
-//    moduleVersion.set(project.version.toString())
-//    outputDirectory.set(layout.buildDirectory.dir("docs"))
-//
-//    dokkaSourceSets {
-//        named("commonMain") {
-//            includes.from(project.files(), "src/docs/overview.md")
-//        }
-//    }
-//}
+tasks.dokkaHtml {
+    moduleName.set(project.name)
+    moduleVersion.set(project.version.toString())
+    outputDirectory.set(layout.buildDirectory.dir("docs"))
+
+    dokkaSourceSets {
+        named("commonMain") {
+            includes.from(project.files(), "src/docs/overview.md")
+        }
+    }
+}
 
 mavenPublishing {
     publishToMavenCentral(SonatypeHost.S01)
