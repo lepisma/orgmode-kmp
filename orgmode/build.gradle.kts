@@ -6,10 +6,10 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.vanniktech.mavenPublish)
-    id("org.jetbrains.dokka") version "2.0.0"
+    // id("org.jetbrains.dokka") version "2.0.0"
 }
 
-group = "xyz.lepisma.orgmode"
+group = "xyz.lepisma"
 version = "0.3.0"
 
 kotlin {
@@ -46,7 +46,7 @@ kotlin {
 }
 
 android {
-    namespace = "org.jetbrains.kotlinx.multiplatform.library.template"
+    namespace = "xyz.lepisma.orgmode"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
     defaultConfig {
         minSdk = libs.versions.android.minSdk.get().toInt()
@@ -61,24 +61,28 @@ tasks.withType<Test>().configureEach {
     useJUnitPlatform()
 }
 
-tasks.dokkaHtml {
-    moduleName.set(project.name)
-    moduleVersion.set(project.version.toString())
-    outputDirectory.set(layout.buildDirectory.dir("docs"))
-
-    dokkaSourceSets {
-        named("commonMain") {
-            includes.from(project.files(), "src/docs/overview.md")
-        }
-    }
-}
+//tasks.dokkaHtml {
+//    moduleName.set(project.name)
+//    moduleVersion.set(project.version.toString())
+//    outputDirectory.set(layout.buildDirectory.dir("docs"))
+//
+//    dokkaSourceSets {
+//        named("commonMain") {
+//            includes.from(project.files(), "src/docs/overview.md")
+//        }
+//    }
+//}
 
 mavenPublishing {
-    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
+    publishToMavenCentral(SonatypeHost.S01)
 
     // signAllPublications()
 
-    coordinates(group.toString(), "library", version.toString())
+    coordinates(
+        group.toString(),
+        "orgmode",
+        version.toString()
+    )
 
     pom {
         name = "OrgModeKMP"
