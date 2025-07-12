@@ -1,7 +1,5 @@
 # Module orgmode
 
-![GitHub Tag](https://img.shields.io/github/v/tag/lepisma/orgmode-kmp)
-
 Kotlin Multiplatform library for parsing, formatting, and working with [Org
 Mode](https://orgmode.org/) files and content.
 
