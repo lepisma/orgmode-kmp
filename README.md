@@ -1,3 +1,5 @@
+> Development for this project has moved to sourcehut [here](https://git.sr.ht/~lepisma/orgmode-kmp). This repository is now in a read-only state.
+
 # orgmode-kmp
 
 Kotlin Multiplatform library for parsing, formatting, and working with [Org
